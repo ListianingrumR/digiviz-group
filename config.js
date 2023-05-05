@@ -12,7 +12,7 @@ let bylineDiv = "<p class='byline'>by Asian Geeks<br>(Juerong Wang, Rahmadita Li
 
 // put the description here (can embed video and pictures)
 let descriptionDiv =
-  "<p><img src='images/crisis.jpg'></p>"+
+  "<p><img src='img/crisis.jpg'></p>"+
   "<p style=margin-top:50px>Introduction</p>" +
   '<p style="text-align:center;margin-top:100px">Lets scroll!<br>▼</p>';
 
@@ -24,14 +24,14 @@ let footerDiv =
 // put the 1st box navigation here
 let divChapter1 =
 "<p><b>Financial Crisis - The History</b></p>" + "<hr>" +
-"<p><img src='images/the-great-recession.png'></p>"+ "<hr>" +
+"<p><img src='img/the-great-recession.png'></p>"+ "<hr>" +
 // https://www.kent.ac.uk/business-and-partnerships/news-and-events/922/the-impact-of-cost-cutting-actions-on-employee-relations-and-workplace-grievances-what-weve-learned-from-the-great-recession
 "<p><b>The Great Recession: </b></p>"
 
 // continue to next box/chapter
 let divChapter2 =
   "<p><b>Where it starts</b></p>" + "<hr>" +
-  "<p><img src='images/lehmanbrothers.jpg'></p>"+ "<hr>" +
+  "<p><img src='img/lehmanbrothers.jpg'></p>"+ "<hr>" +
   // https://www.thebalancemoney.com/lehman-brothers-collapse-causes-impact-4842338
   "<p><b>Lehman Brothers Bankcruptcy</b></p>"
   //"<p><img src='images/jakarta-waste-volume-per-day-by-type-ton.png'></p>"+
