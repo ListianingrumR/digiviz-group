@@ -1,9 +1,9 @@
-mapboxgl.accessToken = 'pk.eyJ1IjoibmluYWZhYnNpa292YSIsImEiOiJja2twaWZlMjQwYTFsMzBxbnE5dWo2Mjk1In0.XLvRzC0uK94qxRFEGWZ-fQ';
+mapboxgl.accessToken = 'pk.eyJ1IjoiZXJpc2RvdWRvdSIsImEiOiJjbGYwYm4zZzUwN3BwM3lzOGN0ZWFpajJsIn0.ArmXQ1-s8Ypt8Yryyb5jGw';
 
 // Load a new map in the 'map' HTML div
 const map = new mapboxgl.Map({
 container: 'map', // container id
-style: 'mapbox://styles/ninafabsikova/cl31ozdf9002014l49icsmobh', 
+style: 'mapbox://styles/erisdoudou/clhgnites000g01qtggshebjw', 
 center: [-15, 0], // starting position [lng, lat]
 zoom: 1.5, // starting zoom
 });
