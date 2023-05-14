@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://code.highcharts.com/highcharts.js"></script>
+  <!--<script src="https://code.highcharts.com/modules/series-label.js"></script>-->
+  <script src="https://code.highcharts.com/modules/exporting.js"></script>
+  <script src="https://code.highcharts.com/modules/export-data.js"></script>
+  <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+
+</head>
+<body>
+  <figure class="highcharts-figure">
+    <div id="container">
+      <div class="row">
+        <div class="col-md-6">
+          <div id="container">
+        </div>    
+      </div>
+    </div>
+
+    <script type="text/javascript">
+      Highcharts.chart('container', {
+
+      title: {
+        text: 'United States Homeownership and Vacancy Rates 2003 - 2023',
+        align: 'left'
+      },
+
+      subtitle: {
+        text: 'Source: <a href="https://fred.stlouisfed.org/release/tables?rid=144&eid=258450#snid=258452">FRED</a>',
+        align: 'left'
+      },
+
+      yAxis: {
+        title: {
+          text: 'Percentage'
+        }
+      },
+
+      xAxis: {
+        accessibility: {
+          rangeDescription: 'Range: 2003 to 2023'
+        }
+      },
+
+      legend: {
+        layout: 'vertical',
+        align: 'right',
+        verticalAlign: 'middle'
+      },
+
+      plotOptions: {
+        series: {
+          label: {
+            connectorAllowed: false
+          },
+          pointStart: 2003
+        }
+      },
+
+      series: [{
+        name: 'Homeownership Rates',
+        data: [68.3, 69.0, 68.9, 68.8, 68.1, 67.8, 67.4, 66.9,  66.1, 65.4, 65.1, 64.5, 63.7, 63.4, 63.9, 64.4, 64.6, 66.6, 65.5, 65.8]
+      }, {
+        name: 'Home Vacancy Rates',
+        data: [1.8, 1.7, 1.9, 2.4, 2.7, 2.8, 2.6, 2.6, 2.5, 2.0, 2.0, 1.9, 1.8, 1.7, 1.6, 1.5, 1.4, 1.0, 0.9, 0.8]
+      }, {
+        name: 'Rental Vacancy Rates',
+        data: [9.8, 10.2, 9.8, 9.7, 9.7, 10.0, 10.6, 10.2, 9.5, 8.7, 8.3, 7.6, 7.1, 6.9, 7.2, 6.9, 6.7, 6.3, 6.1, 5.8]
+      }],
+
+      responsive: {
+        rules: [{
+          condition: {
+            maxWidth: 500
+          },
+          chartOptions: {
+            legend: {
+              layout: 'horizontal',
+              align: 'center',
+              verticalAlign: 'bottom'
+            }
+          }
+        }]
+      }
+
+      });
+    </script>
+  </figure>
+
+</body>
+</html>
+
+
