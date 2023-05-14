@@ -33,11 +33,11 @@ let divChapter1 =
   "<p>The Great Recession brief explanation</p>"
 
 let divChapter2 =
-"<p style=margin-top:50px>Interactive Map of World GDP+Unemployment rate+Charts GDP</p>" +
-"<p style=margin-top:50px>Chart for Population Growth</p>" +
-"<p><b>Global Housing Price Index </b></p>" + "<hr>" +
-"<p> Interactive map"
-  
+  "<p style=margin-top:50px>Interactive Map of World GDP+Unemployment rate+Charts GDP</p>" +
+  "<p style=margin-top:50px>Chart for Population Growth</p>" +
+  "<p><b>Global Housing Price Index </b></p>" + "<hr>" +
+  "<p> Interactive map"
+
 // continue to next box/chapter
 let divChapter3 =
   "<p><b>Where it starts</b></p>" + "<hr>" +
@@ -54,7 +54,7 @@ let divChapter3 =
 
 let divChapter4 =
   "<p><b>USA Housing bubble</b></p>" + "<hr>" +
-  "<p>Housing Foreclosure 2008 interactive Map</p>" 
+  "<p>Housing Foreclosure 2008 interactive Map</p>"
 
 let divChapter5 =
   "<p><b>California Case, why?</b></p>" + "<hr>" +
@@ -62,15 +62,19 @@ let divChapter5 =
 
 let divChapter6 =
   "<p><b>Texas case, why?</b></p>" + "<hr>" +
-  "<p>Zoom to Texas</p>" 
+  "<p>Zoom to Texas</p>"
 
 // YR codes
 let divChapter7 =
   "<p><b>Australia</b></p>" + "<hr>" +
   "<p>Area 2023: 7,692,024 km²</p>" +
   "<p>Total Population 2023 : 26,339,393 </p>" +
-  '<div id="chart-container"></div>' +
-  '<iframe src="chart.html" width="100%" height="300px"></iframe>';
+  "<p>Compared to the United Kingdom and the United States, Australia's employment situation remained favorable during and after the global financial crisis. While the average OECD unemployment rate increased from 5.7% to 8.8% during the crisis and dropped to 8.2% by Q2 2011, Australia's unemployment rate increased from 4.2% to a peak of 5.7% during the crisis, then fell to 4.9% by Q2 2011. Australia's long-term unemployment rate was also lower than the OECD average in 2011. This was partly due to many employers reducing working hours instead of laying off workers in response to the crisis, resulting in an average reduction of around 3.5% in working hours. This approach was similar to that of Germany, where the labor market demonstrated greater resilience than other OECD countries.</p>" +
+  '<iframe src="https://data.oecd.org/chart/74X2" width="100%" height="645" style="border: 0" mozallowfullscreen="true" webkitallowfullscreen="true" allowfullscreen="true"><a href="https://data.oecd.org/chart/74X2" target="_blank">OECD Chart: Unemployment rate, Total, % of labour force, Monthly, Jul 2006 – Jun 2010</a></iframe>' +
+  "<p>Although Australia's economic data was generally positive, it did not avoid the impact of the financial crisis. The stock market capitalization in Australia fell by more than A$771 billion, which was equivalent to 65% of the country's 2008 gross domestic product (GDP) by 2009, and the net worth of the household sector experienced a sharp decline. Since around 43% of adults in Australia own shares either directly or indirectly, the drop in net worth was mainly caused by the decline in the value of share portfolios due to stock market falls. Even by 2009, the ASX price index was still 30 percent lower than its peak in November 2007. There is a general view that the growth of the Australian economy continues to be uneven, and a \"two-speed\" economy exists. This perception is partly due to the impact of natural disasters, such as the 2010-2011 Queensland floods, as well as the high Australian dollar.</p>" +
+  '<iframe src="https://data.oecd.org/chart/74X3" width="100%" height="645" style="border: 0" mozallowfullscreen="true" webkitallowfullscreen="true" allowfullscreen="true"><a href="https://data.oecd.org/chart/74X3" target="_blank">OECD Chart: Share prices, Total, 2015=100, Monthly, Jun 2006 – Dec 2010</a></iframe>' +
+  '<p>In the chart below could see that in Oct, 2009, when the US and UK are facing the highest unemployement rate, the major cities shows the better performance. Especially for the cities in mining-rich states such as Perth (Western Australia) and Brisbane (Queensland) may have fared relatively well.</p>' +
+  '<iframe src="city_unem_chart.html" width="100%" height="400px"></iframe>';
 
 let divChapter8 =
   "<p><b>Sydney</b></p>" + "<hr>" +
@@ -278,7 +282,7 @@ var config = {
       description: "",
       chapterDiv: divChapter7,
       location: {
-        center: [151.2093, -33.8688],
+        center: [155.2093, -33.8688],
         zoom: 3.5,
         zoomSmall: 3,
         pitch: 0,

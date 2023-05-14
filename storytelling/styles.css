@@ -102,8 +102,10 @@ a:visited {
 }
 
 .righty {
-    width: 33vw;
-    margin-left: 62vw;
+    width: 48vw;
+    margin-left: 50vw;
+    margin-top: 20px;
+    height: 2500px;
 }
 
 .light {
