@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--<link rel="icon" type="image/x-icon" href="../assets/favicon.ico" />-->
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.css' rel='stylesheet' />
+    <title>Trial Interactive Map</Map></title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;800&display=swap');        
+
+        body {
+        margin: 0;
+        padding: 0;
+        }
+
+        #map {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 100%;
+        }
+
+        .map-overlay {
+        font: 12px/20px 'Montserrat', sans-serif;
+        position: absolute;
+        width: 30%;
+        top: 0;
+        left: 0;
+        padding: 10px;
+
+        }
+
+        .map-overlay .map-overlay-inner {
+        background-color: #fff;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.20);
+        border-radius: 3px;
+        padding: 10px;
+        margin-bottom: 10px;
+        opacity: 0.9;
+        background: #FFFFFF;
+        }
+
+        .map-overlay table {
+        border: none;
+        width: 100%;
+        }
+
+        .map-overlay h1 {
+        line-height: 30px;
+        font-size: 24px;
+        display: block;
+        margin: 0 0 10px;
+        }
+
+
+        .map-overlay h2 {
+        line-height: 20px;
+        font-size: 18px;
+        display: block;
+        margin: 0 0 10px;
+        }
+
+        .map-overlay p {
+        line-height: 18px;
+        font-size: 13px;
+        display: block;
+        margin: 0 0 10px;
+        }
+
+        .map-overlay label {
+        font: 18px;
+        vertical-align: bottom;
+        margin: 0 0 10px;
+        padding: 0;
+        }
+
+        .map-overlay .legend .bar {
+        height: 20px;
+        width: 100%;
+        background: linear-gradient(to right, #03C4EB, #FFF1D0, #DD1C1A);
+        }
+
+        .map-overlay input {
+        display: inline;
+        vertical-align: middle;
+        margin: 5px;
+        padding: 0;
+        }
+
+        .map-overlay p.credit {
+        margin: 5px 0 0 0;
+        padding: 0;
+        }
+
+        #button {
+        margin: 25px 0 10px 2px;
+        background-color: #d3d3d3; /* Green */
+        border: none;
+        color: black;
+        padding: 15px 15px;
+        text-align: center;
+        display: inline-block;
+        font-size: 16px;
+        font-family: 'Montserrat', sans-serif;
+        border-radius: 4px;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+        }
+
+        #console {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+            padding: 10px 50px 10px 20px;
+            position: absolute;
+            z-index: 1;
+            left: 10px;
+            top: 10px;
+            font-size: 16px;
+            text-align: justify;
+            font-family: 'Montserrat', sans-serif;
+            max-width: 270px;
+            opacity: 1
+        }
+
+        .mapboxgl-popup {
+            max-width: 400px;
+            min-width: 180px;
+            font: 12px/20px 'Montserrat', sans-serif;
+            padding: 0;
+            margin: 0,0,0,20px;
+            pointer-events: none;
+            opacity: 0.9;
+        }
+        
+        .mapboxgl-popup-tip-container {
+            width:0px;
+            height:0px;
+            margin:0 auto;
+            position:relative;
+            pointer-events: none;
+        }
+        
+        .mapboxgl-popup-tip {
+            width:0;
+            height:0;
+            margin:0;
+            border-left:0 solid transparent;
+            border-right:0 solid transparent;
+            border-top:0 solid transparent;
+            box-shadow:none;
+            pointer-events: none;
+        }
+
+        h4 {
+        margin: 20px 0 10px;
+        }
+
+        .cause-legend div {
+            height: 40px;
+        }
+        
+        #cause-legend div span {
+        border-radius: 50%;
+        display: inline-block;
+        height: 10px;
+        margin-right: 10px;
+        width: 10px;
+        }
+
+        #deaths-legend div span {
+            border-radius: 50%;
+            display: inline-block;
+            background-color: black;
+            margin-right: 10px;
+            vertical-align: middle;
+            opacity: 0.7;
+            }
+
+        #slider {
+            -webkit-appearance: none;
+            width: 70%;
+            height: 10px;
+            border-radius: 5px;  
+            background: #d3d3d3;
+            outline: none;
+            opacity: 0.7;
+            -webkit-transition: .2s;
+            transition: opacity .2s;
+            margin-top: 15px;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+        }
+        
+        #slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 22px;
+            height: 22px;
+            border-radius: 50%; 
+            background: black;
+            opacity: 1;
+            cursor: pointer;
+            margin-top: 0px;
+        }
+        
+        
+        #slider::-moz-range-thumb {
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            background: black;
+            cursor: pointer;
+        }
+
+        .boxdraw {
+            background: rgba(56, 135, 190, 0.1);
+            border: 2px solid #3887be;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 0;
+            }
+    </style>
+</head>
+
+<body>
+    <div id='map'></div>
+
+    <div class='map-overlay'>
+        
+        <div class="map-overlay-inner">
+            <div id="legend" class="legend">
+                <div>
+                    <h1>The United States Housing Foreclosure Map</h1>
+                    <p>Social vulnerability to floods can be divided into five aspects. The overall index is an aggregate of five indices calculated by indicators and normalized to Z-Scores.<br>
+                    The map plots the UK's vulnerability index at the LSOA level for analysing and comparing sources of social vulnerability.</p>
+                </div>
+                <div class="bar"></div>
+                <div>Min &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Max</div>
+            </div>
+        </div>
+        
+        <div class="map-overlay-inner">
+            <div class='session'>
+                <h2>Year: <label id='active-year'>2000 - 2016</label></h2>
+                <input id='slider' class='row' type='range' min='2000' max='2016' step='1' value='2021'/>
+        
+                <!-- <h4>From 2006 to 2016</h4>
+
+                <input id='slider' type='range' min='0' max='11' step='1' value='11' list='tickmarks'>
+                    
+                            
+                <datalist id="tickmarks">
+                <option value="0" label="2006">
+                <option value="1">
+                <option value="2">
+                <option value="3">
+                <option value="4">
+                <option value="5" label="2011">
+                <option value="6">
+                <option value="7">
+                <option value="8">
+                <option value="9">
+                <option value="10" label="2016">
+                </datalist>
+                </td>
+                <td>
+                <label id='year'>2016</label>
+                </td>
+                </tr></table> -->
+            <p class="credit">Housing Foreclosure Rate Data: <a href="https://ghsl.jrc.ec.europa.eu">EU Global Human Settlement Layer</a></p>
+            
+            <input id="button" class="uk-button uk-button-default" type="button" value="Show all years" disabled>
+        
+        </div>
+    </div>
+
+    <script>
+        mapboxgl.accessToken = 'pk.eyJ1IjoibGlzdGlhbmluZ3J1bXIiLCJhIjoiY2xkYWhqNDZhMDFpajN2b2JlbWk0b3I5byJ9.MMQjrAuB1KMHcaKfXrnn3w';
+        const map = new mapboxgl.Map({
+        container: 'map', // container ID
+        style: 'mapbox://styles/mapbox/light-v11', // style URL https://docs.mapbox.com/api/maps/styles/
+        center: [-98.484245, 39.011902], // starting position [lng, lat]
+        zoom: 4, // starting zoom
+        maxZoom: 5, // maximum zoom
+        minZoom: 3, // minimum zoom
+        });
+
+        function rangeSlide(value) {
+            document.getElementById('rangeValue').innerHTML = value;}
+
+        /* // Load a new map in the 'map' HTML div
+        var map = new mapboxgl.Map({
+        container: 'map', // container id
+        style: 'mapbox://styles/dantechen0825/clhhvy1ut00qf01pe5tb97op2', // style location
+        center: [-98.484245, 39.011902], // starting position [lng, lat]
+        zoom: 4, // starting zoom
+        maxZoom: 5, // maximum zoom
+        minZoom: 3, // minimum zoom
+        }); */
+        
+        map.addControl(new mapboxgl.NavigationControl());
+
+
+        // Create an array of the available data years
+        var years = [
+            '2006',
+            '2007',
+            '2008',
+            '2009',
+            '2010',
+            '2011',
+            '2012',
+            '2013',
+            '2014',
+            '2015',
+            '2016'
+        ];
+
+        map.on('load', function() {
+            
+            year_id = 'bayarea_2030';
+            year_url = 'mapbox://dantechen0825.5v3zjgzh'; // tileset id
+            year_source_layer = 'bayarea_2030-1574aj'; // layer id
+            
+            const layers = map.getStyle().layers;
+            // Find the index of the first symbol layer in the map style.
+            let firstSymbolId;
+            for (const layer of layers) {
+                if (layer.type === 'symbol') {
+                    firstSymbolId = layer.id;
+                    break;
+                }
+            }
+            
+            // Add the proportional circle layer to the map
+                map.addLayer({
+                        id: year_id,
+                        type: 'raster',
+                        source: {
+                        type: 'raster',
+                        url: year_url, // Your Mapbox tileset Map ID
+                        tileSize: 32
+                        },
+                        'source-layer': year_source_layer, // name of tilesets
+                        'paint' : {
+                            'raster-opacity' : 0.88,
+                            'raster-contrast' :0.3
+                        }
+                        },
+                        firstSymbolId   
+                    );
+            
+        
+        
+            // Assign an event listner to the slider so that the setYear function runs when the user changes the slider
+            document.getElementById('slider').addEventListener('input', function(e) {
+                
+                //map.removeLayer(bayarea_2030);
+                //map.removeSource(bayarea_2030);
+                
+                    var year = parseInt(e.target.value);
+                    
+                    document.getElementById('year').textContent = years[year];  // Set the label to the correct year
+                
+                    if (document.getElementById('year').textContent == 2030) {
+                        year_id = 'bayarea_2030';
+                        year_url = 'mapbox://dantechen0825.5v3zjgzh';
+                        year_source_layer = 'bayarea_2030-1574aj';
+                    };
+                    
+                    if (document.getElementById('year').textContent == 2025) {
+                        year_id = 'bayarea_2025';
+                        year_url = 'mapbox://dantechen0825.9x72ibpy';
+                        year_source_layer = 'bayarea_2025-8ctass';
+                    };
+                
+                if (document.getElementById('year').textContent == 2020) {
+                        year_id = 'bayarea_2020';
+                        year_url = 'mapbox://dantechen0825.0wod7bj5';
+                        year_source_layer = 'bayarea_2000-1o1njt';
+                    };
+                
+                if (document.getElementById('year').textContent == 2015) {
+                        year_id = 'bayarea_2015';
+                        year_url = 'mapbox://dantechen0825.00dezenj';
+                        year_source_layer = 'bayarea_2015-3jorfe';
+                    };
+                
+                if (document.getElementById('year').textContent == 2010) {
+                        year_id = 'bayarea_2010';
+                        year_url = 'mapbox://dantechen0825.6k93jx9f';
+                        year_source_layer = 'bayarea_2010-1a5oqj';
+                    };
+                
+                if (document.getElementById('year').textContent == 2005) {
+                        year_id = 'bayarea_2005';
+                        year_url = 'mapbox://dantechen0825.1yvg10kj';
+                        year_source_layer = 'bayarea_2005-11e3g3';
+                    };
+                
+                
+                if (document.getElementById('year').textContent == 2000) {
+                        year_id = 'bayarea_2000';
+                        year_url = 'mapbox://dantechen0825.0wod7bj5';
+                        year_source_layer = 'bayarea_2000-1o1njt';
+                    };
+                
+                
+                if (document.getElementById('year').textContent == 1995) {
+                        year_id = 'bayarea_1995';
+                        year_url = 'mapbox://dantechen0825.8e8mhurh';
+                        year_source_layer = 'bayarea_1995-0os12w';
+                    };
+                
+                if (document.getElementById('year').textContent == 1990) {
+                        year_id = 'bayarea_1990';
+                        year_url = 'mapbox://dantechen0825.9zi4joh6';
+                        year_source_layer = 'bayarea_1990-6dveq6';
+                    };
+                
+                if (document.getElementById('year').textContent == 1985) {
+                        year_id = 'bayarea_1985';
+                        year_url = 'mapbox://dantechen0825.7ijit4ai';
+                        year_source_layer = 'bayarea_1985-akytlu';
+                    };
+                
+                if (document.getElementById('year').textContent == 1980) {
+                        year_id = 'bayarea_1980';
+                        year_url = 'mapbox://dantechen0825.6ithltk6';
+                        year_source_layer = 'bayarea_1980-4zazpr';
+                    };
+                
+
+                    if (document.getElementById('year').textContent == 1975) {
+                        year_id = 'bayarea_1975';
+                        year_url = 'mapbox://dantechen0825.6ji291sm';
+                        year_source_layer = 'bayarea_1975-84b475';
+                    };
+
+                
+                const year_ids = ['bayarea_1975', 'bayarea_1980', 'bayarea_1985', 'bayarea_1990',
+                        'bayarea_1995', 'bayarea_2000', 'bayarea_2005', 'bayarea_2010',
+                        'bayarea_2015', 'bayarea_2020', 'bayarea_2025', 'bayarea_2030'];
+                
+                for (const i of year_ids) {
+                    if (map.getLayer(i)) {
+                    map.removeLayer(i);
+                };
+                
+                if (map.getSource(i)) {
+                    map.removeSource(i);
+                };
+                }
+                
+                
+                
+                
+                
+                
+                map.addLayer({
+                        id: year_id,
+                        type: 'raster',
+                        source: {
+                        type: 'raster',
+                        url: year_url, // Your Mapbox tileset Map ID
+                        tileSize: 128
+                        },
+                        'source-layer': year_source_layer, // name of tilesets
+                        'paint' : {
+                            'raster-opacity' : 0.88,
+                            'raster-contrast' :0.3
+                        }
+                        },
+                        firstSymbolId   
+                    );
+
+                                                            
+                    });
+            
+
+
+        });
+    </script>
+</body>
+
+</html>

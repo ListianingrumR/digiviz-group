@@ -43,7 +43,9 @@ let divChapter3 =
   "<p><b>Where it starts</b></p>" + "<hr>" +
   "<p><img src='img/lehmanbrothers.jpg'></p>" + "<hr>" +
   // https://www.thebalancemoney.com/lehman-brothers-collapse-causes-impact-4842338
-  "<p><b>Lehman Brothers Bankcruptcy</b></p>" +
+  "<p><b>Lehman Brothers Bankcruptcy</b></p>" 
+
+let divChapter4 =
   '<div id="chart-container"></div>' +
   '<iframe src="charts/homevacant.html" width="100%" height="500px" frameBorder="0"></iframe>'+
   "<p>Bridging to the USA (housing bubble, subprime mortgage)</p>"
@@ -54,36 +56,34 @@ let divChapter3 =
 //"<p class='data-source'>Data source: <a href='https://datawrapper.dwcdn.net/o50nX/1/'>Indonesian Ministry of Environment and Forestry</a></p>";
 //https://datawrapper.dwcdn.net/o50nX/1/
 
-let divChapter4 =
+let divChapter5 =
   "<p><b>USA Housing bubble</b></p>" + "<hr>" +
   "<p>Housing Foreclosure 2008 interactive Map</p>"
   // Housing Interactive Map
   //'<div class="chart-container" data-aos="fade-up"></div>' +
   //'<iframe id="housing" src="../housing/housing-foreclosure.html" height="800px" width="100%" frameBorder="0"></iframe>';
 
-let divChapter5 =
+let divChapter6 =
   "<p><b>California Case, why?</b></p>" + "<hr>" +
   '<iframe src="swipe/urban.html" width="100%" height="800px" frameBorder="0"></iframe>';
 
-let divChapter6 =
+let divChapter7 =
   "<p><b>Texas case, why?</b></p>" + "<hr>" +
   "<p>Zoom to Texas</p>"
 
 // YR codes
-let divChapter7 =
+let divChapter8 =
   "<p><b>Australia</b></p>" + "<hr>" +
   "<p>Area 2023: 7,692,024 km²</p>" +
   "<p>Total Population 2023 : 26,339,393 </p>" +
   "<p>Compared to the United Kingdom and the United States, Australia's employment situation remained favorable during and after the global financial crisis. While the average OECD unemployment rate increased from 5.7% to 8.8% during the crisis and dropped to 8.2% by Q2 2011, Australia's unemployment rate increased from 4.2% to a peak of 5.7% during the crisis, then fell to 4.9% by Q2 2011. Australia's long-term unemployment rate was also lower than the OECD average in 2011. This was partly due to many employers reducing working hours instead of laying off workers in response to the crisis, resulting in an average reduction of around 3.5% in working hours. This approach was similar to that of Germany, where the labor market demonstrated greater resilience than other OECD countries.</p>" +
-  '<iframe src="https://data.oecd.org/chart/74X2" width="100%" height="645" style="border: 0" mozallowfullscreen="true" webkitallowfullscreen="true" allowfullscreen="true"><a href="https://data.oecd.org/chart/74X2" target="_blank">OECD Chart: Unemployment rate, Total, % of labour force, Monthly, Jul 2006 – Jun 2010</a></iframe>' +
+  '<iframe src="https://data.oecd.org/chart/74X2" width="100%" height="645" style="border: 0" mozallowfullscreen="true" webkitallowfullscreen="true" allowfullscreen="true"><a href="https://data.oecd.org/chart/74X2" target="_blank">OECD Chart: Unemployment rate, Total, % of labour force, Monthly, Jul 2006 – Jun 2010</a></iframe>' 
+
+let divChapter9 =
   "<p>Although Australia's economic data was generally positive, it did not avoid the impact of the financial crisis. The stock market capitalization in Australia fell by more than A$771 billion, which was equivalent to 65% of the country's 2008 gross domestic product (GDP) by 2009, and the net worth of the household sector experienced a sharp decline. Since around 43% of adults in Australia own shares either directly or indirectly, the drop in net worth was mainly caused by the decline in the value of share portfolios due to stock market falls. Even by 2009, the ASX price index was still 30 percent lower than its peak in November 2007. There is a general view that the growth of the Australian economy continues to be uneven, and a \"two-speed\" economy exists. This perception is partly due to the impact of natural disasters, such as the 2010-2011 Queensland floods, as well as the high Australian dollar.</p>" +
   '<iframe src="https://data.oecd.org/chart/74X3" width="100%" height="645" style="border: 0" mozallowfullscreen="true" webkitallowfullscreen="true" allowfullscreen="true"><a href="https://data.oecd.org/chart/74X3" target="_blank">OECD Chart: Share prices, Total, 2015=100, Monthly, Jun 2006 – Dec 2010</a></iframe>' +
   '<p>In the chart below could see that in Oct, 2009, when the US and UK are facing the highest unemployement rate, the major cities shows the better performance. Especially for the cities in mining-rich states such as Perth (Western Australia) and Brisbane (Queensland) may have fared relatively well.</p>' +
   '<iframe src="city_unem_chart.html" width="100%" height="450px" style="border: 0"></iframe>';
-
-let divChapter8 =
-  "<p><b>Sydney</b></p>" + "<hr>" +
-  "<a href='https://www.macrotrends.net/cities/206167/sydney/population'>Sydney, Australia Metro Area Population 1950-2023</a>";
 
 //YR
 
@@ -224,7 +224,37 @@ var config = {
       chapterDiv: divChapter5,
       location: {
         center: [260.683594, 39.571822],
-        zoom: 10,
+        zoom: 4,
+        zoomSmall: 2,
+        pitch: 0,
+        bearing: 0,
+      },
+      mapAnimation: "flyTo",
+      rotateAnimation: false,
+      callback: "",
+      onChapterEnter: [
+        {
+          layer: "housing-filed-cases-2000",
+          opacity: 1,
+          duration: 300,
+        },
+      ],
+      onChapterExit: [
+        {
+          layer: "housing-filed-cases-2000",
+          opacity: 0,
+          duration: 300,
+        },
+      ],
+    },
+    {
+      id: "california2",
+      alignment: "center",
+      hidden: false,
+      chapterDiv: divChapter6,
+      location: {
+        center: [260.683594, 39.571822],
+        zoom: 4,
         zoomSmall: 2,
         pitch: 0,
         bearing: 0,
@@ -251,10 +281,10 @@ var config = {
       id: "texas",
       alignment: "center",
       hidden: false,
-      chapterDiv: divChapter6,
+      chapterDiv: divChapter7,
       location: {
-        center: [260.683594, 39.571822],
-        zoom: 10,
+        center: [-119.42, 36.78],
+        zoom: 4,
         zoomSmall: 2,
         pitch: 0,
         bearing: 0,
@@ -280,14 +310,14 @@ var config = {
     //YR
     {
       id: "Australia",
-      alignment: "right",
+      alignment: "center",
       hidden: false,
       title: "",
       image: "",
       description: "",
-      chapterDiv: divChapter7,
+      chapterDiv: divChapter8,
       location: {
-        center: [155.2093, -33.8688],
+        center: [151.2, -33.85],
         zoom: 3.5,
         zoomSmall: 3,
         pitch: 0,
@@ -312,16 +342,16 @@ var config = {
       ],
     },
     {
-      id: "Sydney",
+      id: "Australia2",
       alignment: "right",
       hidden: false,
       title: "",
       image: "",
       description: "",
-      chapterDiv: divChapter8,
+      chapterDiv: divChapter9,
       location: {
-        center: [151.2093, -33.8688],
-        zoom: 9,
+        center: [155.2093, -33.8688],
+        zoom: 3.5,
         zoomSmall: 3,
         pitch: 0,
         bearing: 0,
