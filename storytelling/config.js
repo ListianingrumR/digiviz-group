@@ -44,6 +44,8 @@ let divChapter3 =
   "<p><img src='img/lehmanbrothers.jpg'></p>" + "<hr>" +
   // https://www.thebalancemoney.com/lehman-brothers-collapse-causes-impact-4842338
   "<p><b>Lehman Brothers Bankcruptcy</b></p>" +
+  '<div id="chart-container"></div>' +
+  '<iframe src="charts/homevacant.html" width="100%" height="500px" frameBorder="0"></iframe>'+
   "<p>Bridging to the USA (housing bubble, subprime mortgage)</p>"
 //"<p><img src='images/jakarta-waste-volume-per-day-by-type-ton.png'></p>"+
 //"<p class='data-source'>Data source: <a href='https://datawrapper.dwcdn.net/m2o0s/3/'>Environment Office DKI Jakarta</a></p>"+
@@ -55,10 +57,13 @@ let divChapter3 =
 let divChapter4 =
   "<p><b>USA Housing bubble</b></p>" + "<hr>" +
   "<p>Housing Foreclosure 2008 interactive Map</p>"
+  // Housing Interactive Map
+  //'<div class="chart-container" data-aos="fade-up"></div>' +
+  //'<iframe id="housing" src="../housing/housing-foreclosure.html" height="800px" width="100%" frameBorder="0"></iframe>';
 
 let divChapter5 =
   "<p><b>California Case, why?</b></p>" + "<hr>" +
-  "<p>Zoom to California</p>"
+  '<iframe src="swipe/urban.html" width="100%" height="800px" frameBorder="0"></iframe>';
 
 let divChapter6 =
   "<p><b>Texas case, why?</b></p>" + "<hr>" +
