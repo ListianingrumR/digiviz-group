@@ -41,14 +41,13 @@ let divChapter2 =
 // continue to next box/chapter
 let divChapter3 =
   "<p><b>Where it starts</b></p>" + "<hr>" +
-  "<p><img src='img/lehmanbrothers.jpg'></p>" + "<hr>" +
+  "<p><img src='img/lehmanbrothers.jpg'></p>" + "<hr>" ;
   // https://www.thebalancemoney.com/lehman-brothers-collapse-causes-impact-4842338
-  "<p><b>Lehman Brothers Bankcruptcy</b></p>" 
+  
 
 let divChapter4 =
   '<div id="chart-container"></div>' +
-  '<iframe src="charts/homevacant.html" width="100%" height="500px" frameBorder="0"></iframe>'+
-  "<p>Bridging to the USA (housing bubble, subprime mortgage)</p>"
+  '<iframe src="charts/timeline.html" width="100%" height="500px" frameBorder="0"></iframe>';
 //"<p><img src='images/jakarta-waste-volume-per-day-by-type-ton.png'></p>"+
 //"<p class='data-source'>Data source: <a href='https://datawrapper.dwcdn.net/m2o0s/3/'>Environment Office DKI Jakarta</a></p>"+
 //"<p>Jakarta is divided into 6 districts, which are Thousand Islands, Central Jakarta, North Jakarta, West Jakarta, East Jakarta and South Jakarta.</p>"+
@@ -58,7 +57,8 @@ let divChapter4 =
 
 let divChapter5 =
   "<p><b>USA Housing bubble</b></p>" + "<hr>" +
-  "<p>Housing Foreclosure 2008 interactive Map</p>"
+  '<iframe src="charts/homevacant.html" width="100%" height="500px" frameBorder="0"></iframe>'+
+  "<p>Bridging to the USA (housing bubble, subprime mortgage)</p>";
   // Housing Interactive Map
   //'<div class="chart-container" data-aos="fade-up"></div>' +
   //'<iframe id="housing" src="../housing/housing-foreclosure.html" height="800px" width="100%" frameBorder="0"></iframe>';
