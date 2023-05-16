@@ -298,7 +298,7 @@ var config = {
       onChapterEnter: [
         {
           layer: "housing-filed-cases-2000",
-          opacity: 1,
+          opacity: 0,
           duration: 300,
         },
       ],
