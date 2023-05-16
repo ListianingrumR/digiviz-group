@@ -96,6 +96,13 @@ a:visited {
     padding-bottom: 20px;
 }
 
+.centered2 {
+    width: 80vw;
+    margin: 0 auto;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
 .lefty {
     width: 33vw;
     margin-left: 5vw;

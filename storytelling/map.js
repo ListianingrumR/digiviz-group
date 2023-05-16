@@ -23,6 +23,7 @@ var alignments = {
   center: "centered",
   right: "righty",
   full: "fully",
+  center2: "centered2",
 };
 
 /* The next two functions help turn on and off individual

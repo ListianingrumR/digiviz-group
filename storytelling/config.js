@@ -64,12 +64,14 @@ let divChapter5 =
 //'<iframe id="housing" src="../housing/housing-foreclosure.html" height="800px" width="100%" frameBorder="0"></iframe>';
 
 let divChapter6 =
-  "<p><b>California Case, why?</b></p>" + "<hr>" +
-  '<iframe src="swipe/urban.html" width="100%" height="800px" frameBorder="0"></iframe>';
+  "<p><b>The United States Situation after the stock market crash</b></p>" + "<hr>" +
+  '<iframe src="usa.html" width="100%" height="800px" frameBorder="0"></iframe>';
 
 let divChapter7 =
-  "<p><b>Texas case, why?</b></p>" + "<hr>" +
-  "<p>Zoom to Texas</p>"
+  "<p><b>California Urbanised Area</b></p>" + "<hr>" +
+  "<p>Here is the changing of Urbanised Area in California over 10 years from 2008-2018.</p>" +
+  "<p>We can see there are some of urbanised area that are shrinked in the past decade." + "<hr>" +
+  '<iframe src="swipe/urban.html" width="100%" height="800px" frameBorder="0"></iframe>';
 
 // YR codes
 // Impact of the Global Financial Crisis on Australia
@@ -280,7 +282,7 @@ var config = {
     },
     {
       id: "california2",
-      alignment: "center",
+      alignment: "center2",
       hidden: false,
       chapterDiv: divChapter6,
       location: {
