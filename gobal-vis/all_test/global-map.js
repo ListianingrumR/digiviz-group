@@ -25,141 +25,243 @@ map.on('load', function() {
   let box;
 
   //add flood extents
-  map.addSource('flood-extents', {
+  map.addSource('world-gdp-all-cleaned-b9n1mg', {
     'type': 'vector',
-    'url': 'mapbox://ninafabsikova.7sxe8hkc'
+    'url': 'mapbox://erisdoudou.07ca799x'
   })
   map.addLayer({
-    id: 'extents',
+    id: '2006',
     type: 'fill',
-    source: 'flood-extents',
-    'source-layer': 'flood_extent-96moi8',
+    source: 'world-gdp-all-cleaned-b9n1mg',
+    'source-layer': 'world-gdp-all-cleaned-b9n1mg',
     paint: {
-      'fill-color': 'black',
-      'fill-opacity': 0
-    }
-  })
-
-  map.addLayer({
-    id: 'extents-selected',
-    type: 'fill',
-    source: 'flood-extents',
-    'source-layer': 'flood_extent-96moi8',
-    paint: {
-      'fill-color': 'black',
-      'fill-opacity': 0.05
-    },
-    filter: ['==', ['number', ['get', 'ID']], 10000]
-  })
-
-  map.addLayer({
-    id: 'extents-highlighted',
-    type: 'fill',
-    source: 'flood-extents',
-    'source-layer': 'flood_extent-96moi8',
-    'layout': {
-      'visibility': 'visible'
-    },
-    paint: {
-      'fill-color': '#48cae4',
-      'fill-opacity': 0.6
-    },
-    filter: ['==', ['number', ['get', 'ID']], 10000]
-  })
-
-  //add circles to map
-  map.addLayer({
-    id: 'floods',
-    type: 'circle',
-    source: {
-      type: 'vector',
-      url: 'mapbox://ninafabsikova.bdzdrcif',
-      promoteId:'ID'
-    },
-    'source-layer': 'floods2-4x8fkq',
-    paint: {
-      'circle-color': [
-        'match',
-        ['get', 'MainCause2'],
-        'Heavy rain',
-        '#3b9da0',
-        'Tropical storm/surge',
-        '#22429b',
-        'Snowmelt. ice',
-        '#3dbbff',
-        'Dam',
-        '#b740f7',
-        '#596073'
+      'fill-color': [
+        "interpolate",
+        ["linear"],
+        ["get", "2006"],
+        -6.871463217,
+        "#2166ac",
+        0,
+        "#ededed",
+        34.5,
+        "#b2182b"
       ],
-      'circle-opacity': {
-        stops: [[2, 0.35], [8, 1]]
-      },
-      'circle-radius': {
-        property: 'Dead',
-        stops: [
-          [{zoom: 2, value: 0}, 5], 
-          [{zoom: 5, value: 0}, 5],
-          [{zoom: 5, value: 1}, 9],
-          [{zoom: 5, value: 100}, 13],
-          [{zoom: 5, value: 1000}, 17],
-          [{zoom: 5, value: 10000}, 21],
-          [{zoom: 5, value: 100000}, 25]
-        ]
-      },
-      'circle-stroke-color': 'black',
-      'circle-stroke-width': [
-        'case',
-        ['boolean', ['feature-state', 'hover'], false],
-        3,
-        0
-      ]
+      'fill-opacity': 1
     }
-  });
+  })
 
-    //add circles to map
-    map.addLayer({
-      id: 'floods-highlighted',
-      type: 'circle',
-      source: {
-        type: 'vector',
-        url: 'mapbox://ninafabsikova.bdzdrcif',
-        promoteId:'ID'
-      },
-      'source-layer': 'floods2-4x8fkq',
-      paint: {
-        'circle-color': [
-          'match',
-          ['get', 'MainCause2'],
-          'Heavy rain',
-          '#3b9da0',
-          'Tropical storm/surge',
-          '#22429b',
-          'Snowmelt. ice',
-          '#3dbbff',
-          'Dam',
-          '#b740f7',
-          '#596073'
-        ],
-        'circle-opacity': {
-          stops: [[2, 0.35], [8, 1]]
-        },
-        'circle-radius': {
-          property: 'Dead',
-          stops: [
-            [{zoom: 2, value: 0}, 5], 
-            [{zoom: 5, value: 0}, 5],
-            [{zoom: 5, value: 1}, 9],
-            [{zoom: 5, value: 100}, 13],
-            [{zoom: 5, value: 1000}, 17],
-            [{zoom: 5, value: 10000}, 21],
-            [{zoom: 5, value: 100000}, 25]
-          ]
-        },
-        'circle-stroke-color': 'black',
-        'circle-stroke-width': 3
-      },
-      filter: ['in', 'ID', '']
-    });
+  map.addLayer({
+    id: '2007',
+    type: 'fill',
+    source: 'world-gdp-all-cleaned-b9n1mg',
+    'source-layer': 'world-gdp-all-cleaned-b9n1mg',
+    paint: {
+      'fill-color': [
+        "interpolate",
+        ["linear"],
+        ["get", "2007"],
+        -22.85714286,
+        "#2166ac",
+        0,
+        "#ededed",
+        24.99999985,
+        "#b2182b"
+      ],
+      'fill-opacity': 1
+    }
+  })
+
+  map.addLayer({
+    id: '2008',
+    type: 'fill',
+    source: 'world-gdp-all-cleaned-b9n1mg',
+    'source-layer': 'world-gdp-all-cleaned-b9n1mg',
+    paint: {
+      'fill-color': [
+        "interpolate",
+        ["linear"],
+        ["get", "2008"],
+        -17.66894633,
+        "#2166ac",
+        0,
+        "#ededed",
+        22.22222222,
+        "#b2182b"
+      ],
+      'fill-opacity': 1
+    }
+  })
+
+  map.addLayer({
+    id: '2009',
+    type: 'fill',
+    source: 'world-gdp-all-cleaned-b9n1mg',
+    'source-layer': 'world-gdp-all-cleaned-b9n1mg',
+    paint: {
+      'fill-color': [
+        "interpolate",
+        ["linear"],
+        ["get", "2009"],
+        -17.57322176,
+        "#2166ac",
+        0,
+        "#ededed",
+        21.39052839,
+        "#b2182b"
+      ],
+      'fill-opacity': 1
+    }
+  })
+
+  map.addLayer({
+    id: '2010',
+    type: 'fill',
+    source: 'world-gdp-all-cleaned-b9n1mg',
+    'source-layer': 'world-gdp-all-cleaned-b9n1mg',
+    paint: {
+      'fill-color': [
+        "interpolate",
+        ["linear"],
+        ["get", "2010"],
+        -8.924175889,
+        "#2166ac",
+        0,
+        "#ededed",
+        21.45206092,
+        "#b2182b"
+      ],
+      'fill-opacity': 1
+    }
+  })
+
+  map.addLayer({
+    id: '2011',
+    type: 'fill',
+    source: 'world-gdp-all-cleaned-b9n1mg',
+    'source-layer': 'world-gdp-all-cleaned-b9n1mg',
+    paint: {
+      'fill-color': [
+        "interpolate",
+        ["linear"],
+        ["get", "2011"],
+        -10.14931483,
+        "#2166ac",
+        0,
+        "#ededed",
+        17.29077758,
+        "#b2182b"
+      ],
+      'fill-opacity': 1
+    }
+  })
+
+  map.addLayer({
+    id: '2012',
+    type: 'fill',
+    source: 'world-gdp-all-cleaned-b9n1mg',
+    'source-layer': 'world-gdp-all-cleaned-b9n1mg',
+    paint: {
+      'fill-color': [
+        "interpolate",
+        ["linear"],
+        ["get", "2012"],
+        -46.08212237,
+        "#2166ac",
+        0,
+        "#ededed",
+        15.74487708,
+        "#b2182b"
+      ],
+      'fill-opacity': 1
+    }
+  })
+
+  map.addLayer({
+    id: '2013',
+    type: 'fill',
+    source: 'world-gdp-all-cleaned-b9n1mg',
+    'source-layer': 'world-gdp-all-cleaned-b9n1mg',
+    paint: {
+      'fill-color': [
+        "interpolate",
+        ["linear"],
+        ["get", "2013"],
+        -36.3919771,
+        "#2166ac",
+        0,
+        "#ededed",
+        30.6122449,
+        "#b2182b"
+      ],
+      'fill-opacity': 1
+    }
+  })
+
+  map.addLayer({
+    id: '2014',
+    type: 'fill',
+    source: 'world-gdp-all-cleaned-b9n1mg',
+    'source-layer': 'world-gdp-all-cleaned-b9n1mg',
+    paint: {
+      'fill-color': [
+        "interpolate",
+        ["linear"],
+        ["get", "2014"],
+        -10.31033991,
+        "#2166ac",
+        0,
+        "#ededed",
+        26.5625,
+        "#b2182b"
+      ],
+      'fill-opacity': 1
+    }
+  })
+  
+  map.addLayer({
+    id: '2015',
+    type: 'fill',
+    source: 'world-gdp-all-cleaned-b9n1mg',
+    'source-layer': 'world-gdp-all-cleaned-b9n1mg',
+    paint: {
+      'fill-color': [
+        "interpolate",
+        ["linear"],
+        ["get", "2015"],
+        -20.59877072,
+        "#2166ac",
+        0,
+        "#ededed",
+        24.37044535,
+        "#b2182b"
+      ],
+      'fill-opacity': 1
+    }
+  })
+
+  map.addLayer({
+    id: '2016',
+    type: 'fill',
+    source: 'world-gdp-all-cleaned-b9n1mg',
+    'source-layer': 'world-gdp-all-cleaned-b9n1mg',
+    paint: {
+      'fill-color': [
+        "interpolate",
+        ["linear"],
+        ["get", "2016"],
+        -8.816417232,
+        "#2166ac",
+        0,
+        "#ededed",
+        29.21212121,
+        "#b2182b"
+      ],
+      'fill-opacity': 1
+    },
+    filter: ['==', ['number', ['get', 'ID']], 10000]
+  })
+
+
 
   // Set `true` to dispatch the event before other functions
   // call it. This is necessary for disabling the default map

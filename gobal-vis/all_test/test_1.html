@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Global: Economic Overview</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.js"></script>
+  <link href="https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.css" rel="stylesheet">
+  <style>
+    body { margin: 0; padding: 0; }
+    #map { position: absolute; top: 0; bottom: 0; width: 100%; }
+  </style>
+</head>
+<body>
+  <div id="map"></div>
+  <script>
+    mapboxgl.accessToken = 'pk.eyJ1IjoiZXJpc2RvdWRvdSIsImEiOiJjbGYwYm4zZzUwN3BwM3lzOGN0ZWFpajJsIn0.ArmXQ1-s8Ypt8Yryyb5jGw';
+    var map = new mapboxgl.Map({
+      container: 'map',
+      style: 'mapbox://styles/erisdoudou/clhgnites000g01qtggshebjw',
+      center: [132.85, 10.12],
+      zoom: 2.05
+    });
+
+    // Add a source for the 2007 data
+    map.addSource('2007', {
+      type: 'vector',
+      url: 'mapbox://erisdoudou.07ca799x'
+    });
+
+    // Add the 2007 layer
+    map.addLayer({
+      id: '2007',
+      type: 'fill',
+      source: '2007',
+      'source-layer': 'world-gdp-all-cleaned-b9n1mg',
+      paint: {
+        'fill-color': 'black',
+        'fill-opacity': 0.05
+      },
+      filter: ['==', ['number', ['get', 'ID']], 10000]
+    });
+
+    // Add a source for the 2017 data
+    map.addSource('2017', {
+      type: 'vector',
+      url: 'mapbox://erisdoudou.0ig99t6p'
+    });
+
+    // Add the 2017 layer
+    map.addLayer({
+      id: '2017',
+      type: 'fill',
+      source: '2017',
+      'source-layer': 'world-gdp-all-cleaned-b9n1mg',
+      paint: {
+        'fill-color': 'black',
+        'fill-opacity': 0.05
+      },
+      filter: ['==', ['number', ['get', 'ID']], 10000]
+    });
+
+    // Create a slider control
+    var slider = document.getElementById('slider');
+    slider.addEventListener('input', function(e) {
+      var year = parseInt(e.target.value);
+      // Set the filter for the 2007 layer
+      map.setFilter('2007', ['==', ['number', ['get', 'ID']], year]);
+      // Set the filter for the 2017 layer
+      map.setFilter('2017', ['==', ['number', ['get', 'ID']], year]);
+      // Update the year label
+      document.getElementById('year').textContent = year;
+    });
+  </script>
+  <div id="slider-container">
+    <input id="slider" type="range" min="1990" max="2020" step="1" value="2007">
+    <div id="slider-labels">
+      <span>1990</span>
+      <span>2000</span>
+      <span>2010</span>
+      <span>202
