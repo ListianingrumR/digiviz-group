@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Unemployment Rate in Major Cities</title>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <style>
+        #chartContainer {
+            width: 600px;
+            height: 400px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="chartContainer"></div>
+
+    <script>
+        // Data
+        var data = [
+            { name: 'Sydney', y: 5.9 },
+            { name: 'Melbourne', y: 5.2 },
+            { name: 'Brisbane', y: 5.1 },
+            { name: 'Adelaide', y: 5.2 },
+            { name: 'Perth', y: 4.4 },
+            { name: 'Hobart', y: 5.4 }
+        ];
+
+        // Sort data
+        data.sort(function (a, b) {
+            return a.y - b.y;
+        });
+
+        // Assign colors
+        data[0].color = '#b2182b';
+        data[1].color = '#b2182b';
+
+        // Chart Options
+        var options = {
+            chart: {
+                type: 'bar'
+            },
+            title: {
+                text: 'The Total Unemployment Rate in Australia Major Cities in Oct 2009'
+            },
+            xAxis: {
+                categories: data.map(function (item) { return item.name; })
+            },
+            yAxis: {
+                title: {
+                    text: 'Unemployment Rate in Major Cities'
+                }
+            },
+            series: [{
+                name: 'Unemployment Rate',
+                data: data,
+                color: '#2166ac'
+            }]
+        };
+
+        // Initialize the chart
+        Highcharts.chart('chartContainer', options);
+    </script>
+</body>
+
+</html>

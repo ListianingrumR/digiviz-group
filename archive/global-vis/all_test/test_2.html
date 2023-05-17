@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Choropleth Map with Time Slider</title>
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.4.1/mapbox-gl.js"></script>
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.4.1/mapbox-gl.css" rel="stylesheet" />
+    <style>
+      #map {
+        height: 600px;
+        width: 100%;
+      }
+
+      .slider {
+        width: 80%;
+        margin: 0 auto;
+      }
+
+      .slider input {
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="map"></div>
+     <div class="slider">
+      <input id="slider" type="range" min="2007" max="2017" step="1" value="2007" />
+    </div>   
+    </div>
+    
+
+    <script src="test_2.js"></script>
+  </body>
+</html>

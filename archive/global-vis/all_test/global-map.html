@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Global: Economic Overview</title>
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.css" rel="stylesheet">
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.js"></script> 
+    <link rel="icon" type="image/x-icon" href="../assets/favicon.ico" />
+    <link href="global-map-style.css" rel="stylesheet">
+  
+
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;900&display=swap');
+
+      </style>
+  </head>
+
+  <body>
+    <div id="map"></div>
+    <div id='console' >
+      <h1>Global Economic Overview</h1>
+      <p>Use the <i>time slider</i> to select a year or <i>hover</i> over the legends to filter.
+      <br><br><i>Zoom in and hover</i> over a point to get more info.
+      <br><br>Hold <i>shift</i> and <i>drag</i> the map to see gerneral economic data of selected coutry.
+      </p>
+
+      <div class='session'>
+        <h4>Year: <label id='Year'>2000 - 2021</label></h4>
+        <input id='slider' class='row' type='range' min='2000' max='2021' step='1' value='2021'/>
+      </div>
+
+      
+      <input id="button" class="uk-button uk-button-default" type="button" value="Show all years" disabled>
+
+      <h4> Theme </h4>
+      <div id="cause-legend" class="legend">
+        <div id="Global-GDP" style="height:25px;"><span style="background-color: #3b9da0"></span>Global-GDP</div>
+        <div id="Global-Unpolyment Rate" style="height:25px;"><span style="background-color: #22429b"></span>Global-Unpolyment Rate</div>
+        <div id="Global-House Price" style="height:25px;"><span style="background-color: #3dbbff"></span>Global-House Price</div>
+        </div>
+
+  
+        <p style="font-size:12px;">Global-GDP Source:</p>
+
+
+
+        
+    </div> 
+
+
+    <script type="text/JavaScript" src="test_2.js"></script> 
+
+
+  </body>
+
+</html>
