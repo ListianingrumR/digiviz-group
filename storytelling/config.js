@@ -60,7 +60,8 @@ let divChapter5 =
 //'<iframe id="housing" src="../housing/housing-foreclosure.html" height="800px" width="100%" frameBorder="0"></iframe>';
 
 let divChapter6 =
-  "<p><b>The United States Housing Foreclosure 2008</b></p>" + "<hr>" ;
+  "<p><b>The United States Housing Foreclosure 2008</b></p>" + "<hr>" +
+  '<iframe title="US Housing Foreclosure 2008" aria-label="Bar Chart" id="datawrapper-chart-dFsXm" src="https://datawrapper.dwcdn.net/dFsXm/2/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="332" data-external="1"></iframe>';
 
 let divChapter7 =
   "<p><b>The United States Situation after the stock market crash</b></p>" + "<hr>" +
@@ -72,7 +73,7 @@ let divChapter7 =
   
   let divChapter9 =
   "<p><b>California Urbanised Area</b></p>" + "<hr>" +
-  "<p>There are several states that impacted harder than others when this happened. One of them is California. Here is the changing of Urbanised Area in Los Angeles, California 10 years after the crisis (2008 vs 2018). We can see there are some of urbanised area that are shrinked in the past decade.</p>" + "</hr>" +
+  "<p>Here is the changing of Urbanised Area in Los Angeles, California 10 years after the crisis (2008 vs 2018). We can see there are some of urbanised area that are shrinked in the past decade.</p>" + "</hr>" +
   '<iframe src="map/urban.html" width="100%" height="650px" frameBorder="0"></iframe>';
 
 // YR codes
