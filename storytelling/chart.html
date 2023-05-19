@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Bar Chart</title>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <style>
+        #chartContainer {
+            width: 600px;
+            height: 400px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="chartContainer"></div>
+
+    <script>
+        // Chart Options
+        var options = {
+            chart: {
+                type: 'bar'
+            },
+            title: {
+                text: 'The Unemployment Rate in Australia Major Cities in Oct 2009'
+            },
+            xAxis: {
+                categories: ['Sydney', 'Melbourne', 'Brisbane', 'Adelaide', 'Perth', 'Hobart']
+            },
+            yAxis: {
+                title: {
+                    text: 'Values'
+                }
+            },
+            series: [{
+                name: 'Unemployment Rate',
+                data: [5.9, 5.2, 5.1, 5.2, 4.4, 5.4]
+            }]
+        };
+
+        // Initialize the chart
+        Highcharts.chart('chartContainer', options);
+    </script>
+</body>
+
+</html>
