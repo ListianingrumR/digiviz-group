@@ -25,10 +25,10 @@ let footerDiv =
 // put the 1st box navigation here
 let divChapter1 =
   "<p><b>Global Crisis - The History</b></p>" + "<hr>" +
-  "<p><img src='img/timeline.png'></p>" + "<hr>" ;
-  // https://www.kent.ac.uk/business-and-partnerships/news-and-events/922/the-impact-of-cost-cutting-actions-on-employee-relations-and-workplace-grievances-what-weve-learned-from-the-great-recession
-  //"<p><b>The Great Recession</b></p>" +
-  //"<p>The Great Recession brief explanation</p>"
+  "<p><img src='img/timeline.png'></p>" + "<hr>";
+// https://www.kent.ac.uk/business-and-partnerships/news-and-events/922/the-impact-of-cost-cutting-actions-on-employee-relations-and-workplace-grievances-what-weve-learned-from-the-great-recession
+//"<p><b>The Great Recession</b></p>" +
+//"<p>The Great Recession brief explanation</p>"
 
 let divChapter2 =
   "<p style=margin-top:50px><b>World GDP Growth(%) from 2006-2016</b></p>" +
@@ -54,7 +54,7 @@ let divChapter4 =
 let divChapter5 =
   "<p><b>USA Housing bubble</b></p>" + "<hr>" +
   '<iframe src="chart/homevacant.html" width="100%" height="500px" frameBorder="0"></iframe>';
-  "<p>Bridging to the USA (housing bubble, subprime mortgage)</p>";
+"<p>Bridging to the USA (housing bubble, subprime mortgage)</p>";
 // Housing Interactive Map
 //'<div class="chart-container" data-aos="fade-up"></div>' +
 //'<iframe id="housing" src="../housing/housing-foreclosure.html" height="800px" width="100%" frameBorder="0"></iframe>';
@@ -67,11 +67,11 @@ let divChapter7 =
   "<p><b>The United States Situation after the stock market crash</b></p>" + "<hr>" +
   '<iframe src="map/usa.html" width="100%" height="650px" frameBorder="0"></iframe>';
 
-  let divChapter8 =
+let divChapter8 =
   "<p><b>California</b></p>" + "<hr>" +
-  "<p>There are several states that impacted harder than others when this happened. One of them is California.</p>" + "</hr>" ;
-  
-  let divChapter9 =
+  "<p>There are several states that impacted harder than others when this happened. One of them is California.</p>" + "</hr>";
+
+let divChapter9 =
   "<p><b>California Urbanised Area</b></p>" + "<hr>" +
   "<p>Here is the changing of Urbanised Area in Los Angeles, California 10 years after the crisis (2008 vs 2018). We can see there are some of urbanised area that are shrinked in the past decade.</p>" + "</hr>" +
   '<iframe src="map/urban.html" width="100%" height="650px" frameBorder="0"></iframe>';
@@ -81,16 +81,16 @@ let divChapter7 =
 //share price
 let divChapter10 =
   "<p><b>Australia</b></p>" + "<hr>" +
-  //"<p>Area 2023: 7,692,024 km²</p>" +
-  //"<p>Total Population 2023 : 26,339,393 </p>" +
   "<p>The global financial crisis had a profound impact on countries and regions worldwide, including Australia, even though they were geographically distant. In Australia, the crisis led to a significant decline in stock market capitalization, with a loss of over A$771 billion, equivalent to 65% of the country's GDP in 2008. The household sector also experienced a sharp decline in net worth. As approximately 43% of adults in Australia own shares directly or indirectly, the drop in net worth was primarily caused by the decrease in the value of share portfolios due to stock market declines. Even by 2009, the ASX price index remained 30% below its peak in November 2007. The Australian economy has been perceived as having uneven growth, and a \"two-speed\" economy exists, partly due to natural disasters such as the 2010-2011 Queensland floods and the impact of a high Australian dollar.</p>" +
-  '<iframe src="https://data.oecd.org/chart/74X3" width="100%" height="645" style="border: 0" mozallowfullscreen="true" webkitallowfullscreen="true" allowfullscreen="true"><a href="https://data.oecd.org/chart/74X3" target="_blank">OECD Chart: Share prices, Total, 2015=100, Monthly, Jun 2006 – Dec 2010</a></iframe>'
+  '<iframe src="chart/share_price.html" width="100%" height="450px" style="border: 0"></iframe>';
+//'<iframe src="https://data.oecd.org/chart/74X3" width="100%" height="645" style="border: 0" mozallowfullscreen="true" webkitallowfullscreen="true" allowfullscreen="true"><a href="https://data.oecd.org/chart/74X3" target="_blank">OECD Chart: Share prices, Total, 2015=100, Monthly, Jun 2006 – Dec 2010</a></iframe>'
 
 // unemployment rate
 let divChapter11 =
   '<p>However, despite these challenges, Australia performed relatively well compared to the United Kingdom and the United States during the crisis. The employment situation in Australia remained favorable, as shown in the graph below. While the average OECD unemployment rate increased from 5.7% to 8.8% during the crisis and then decreased to 8.2% by Q2 2011, Australia\'s unemployment rate increased from 4.2% to a peak of 5.7% during the crisis and then fell to 4.9% by Q2 2011. Australia also had a lower long-term unemployment rate than the OECD average in 2011. This can be attributed to the fact that many employers opted to reduce working hours rather than laying off workers, resulting in an average reduction of around 3.5% in working hours. This approach was similar to that of Germany, where the labor market demonstrated greater resilience compared to other OECD countries.</p>' +
+  '<iframe src="chart/unem_many.html" width="100%" height="450px" style="border: 0"></iframe>';
 
-  '<iframe src="https://data.oecd.org/chart/74X2" width="100%" height="645" style="border: 0" mozallowfullscreen="true" webkitallowfullscreen="true" allowfullscreen="true"><a href="https://data.oecd.org/chart/74X2" target="_blank">OECD Chart: Unemployment rate, Total, % of labour force, Monthly, Jul 2006 – Jun 2010</a></iframe>'
+//'<iframe src="https://data.oecd.org/chart/74X2" width="100%" height="645" style="border: 0" mozallowfullscreen="true" webkitallowfullscreen="true" allowfullscreen="true"><a href="https://data.oecd.org/chart/74X2" target="_blank">OECD Chart: Unemployment rate, Total, % of labour force, Monthly, Jul 2006 – Jun 2010</a></iframe>'
 
 // reasons on states
 let divChapter12 =
@@ -101,8 +101,7 @@ let divChapter12 =
   "<p>The Australian government and the Reserve Bank of Australia(RBA) responded swiftly and decisively to the crisis.The RBA implemented significant interest rate cuts, and the government implemented a substantial fiscal stimulus package.These measures helped to stimulate demand in the economy during a time of severe stress. <br> <br>The share price analysis also indicates that Australian share prices continuously outperformed those of over 19 European countries during the market crash and subsequent recovery.</p>" +
   '<h4>3. Strong trade links with China:</h4>' +
   "<p>Australia benefited from its strong trade ties with China, which continued to experience rapid growth during the crisis.Demand from China for Australian commodities, particularly iron ore and coal, remained robust, providing crucial support to the Australian economy.</p >" +
-  '<h4>4. Commodity boom:</h4>' +
-  "<p><Australia\'s economy heavily relies on the mining sector, and the commodity boom that preceded the 2008 crisis helped cushion the Australian economy against the downturn. High commodity prices supported income and employment in the mining sector, which subsequently flowed through to the rest of the economy. <br> At the state level, mining - dominant states such as Western Australia experienced lower personal bankruptcy rates during the 2007 - 2008 financial year. </p > "
+  '<h4>4. Commodity boom:</h4>' + '<p>Australia\'s economy heavily relies on the mining sector, and the commodity boom that preceded the 2008 crisis helped cushion the Australian economy against the downturn. High commodity prices supported income and employment in the mining sector, which subsequently flowed through to the rest of the economy.<br> <br>At the state level, mining - dominant states such as Western Australia experienced lower personal bankruptcy rates during the 2007 - 2008 financial year.</p>'
 
 // reasons on cities
 let divChapter13 =

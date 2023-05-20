@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/data.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+</head>
+
+<body>
+
+    <div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+
+    <script>
+        fetch('https://raw.githubusercontent.com/ListianingrumR/digiviz-group/main/storytelling/chart/chart_data/DP_LIVE_19052023190755103.csv')
+            .then(response => response.text())
+            .then(data => {
+                const parsedData = Papa.parse(data, { header: true, dynamicTyping: true }).data;
+
+                // Extract the unique dates from the TIME column
+                const categories = Array.from(new Set(parsedData.map(row => row['TIME'])));  // Replace 'TIME' with your actual column name for time
+
+                // Filter rows where LOCATION is 'AUS' or 'EA19', map to the Value, and ensure the data aligns with the categories
+                const seriesDataAUS = categories.map(time => {
+                    const row = parsedData.find(row => row['LOCATION'] === 'AUS' && row['TIME'] === time);
+                    return row ? parseFloat(row['Value'].toFixed(1)) : null;
+                });
+
+                const seriesDataEA19 = categories.map(time => {
+                    const row = parsedData.find(row => row['LOCATION'] === 'EA19' && row['TIME'] === time);
+                    return row ? parseFloat(row['Value'].toFixed(1)) : null;
+                });
+
+                Highcharts.chart('container', {
+                    chart: {
+                        backgroundColor: '#deeaf1'
+                    },
+                    title: {
+                        text: 'Share Prices, Jun 2006 – Dec 2010'
+                    },
+                    xAxis: {
+                        categories: categories,
+                        labels: {
+                            formatter: function () {
+                                return this.value === 55 ? '' : this.value;
+                            }
+                        }
+                    },
+
+                    yAxis: {
+                        title: {
+                            text: 'Share Price'
+                        },
+                        min: 50,
+                        max: 125,
+                        gridLineColor: '#ffffff',
+                        gridLineWidth: 1
+                    },
+                    tooltip: {
+                        pointFormat: '{series.name}: <b>{point.y:.1f}</b>',
+                    },
+                    plotOptions: {
+                        line: {
+                            lineWidth: 2,
+                            marker: {
+                                enabled: true,
+                                symbol: 'circle',
+                                radius: 3
+                            }
+                        }
+                    },
+
+
+                    series: [{
+                        name: 'Australia',
+                        color: 'red',
+                        data: seriesDataAUS,
+                        dataLabels: {
+                            enabled: false,
+                            format: '{point.y:.1f}'
+                        }
+                    }, {
+                        name: 'Euro Area 19 Countries',
+                        color: 'black',
+                        data: seriesDataEA19,
+                        dataLabels: {
+                            enabled: false,
+                            format: '{point.y:.1f}'
+                        }
+                    }]
+                });
+            });
+
+    </script>
+
+</body>
+
+</html>

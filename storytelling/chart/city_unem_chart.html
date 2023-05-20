@@ -38,11 +38,17 @@
 
         // Chart Options
         var options = {
+            legend: {
+                enabled: false
+            },
             chart: {
                 type: 'bar'
             },
             title: {
-                text: 'The Total Unemployment Rate in Australia Major Cities in Oct 2009'
+                text: 'The Total Unemployment Rate in Australia Major Cities in Oct 2009',
+                style: {
+                    fontSize: '16px'
+                }
             },
             xAxis: {
                 categories: data.map(function (item) { return item.name; })

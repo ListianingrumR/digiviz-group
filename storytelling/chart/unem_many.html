@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/data.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+</head>
+
+<body>
+
+    <div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+
+    <script>
+        fetch('https://raw.githubusercontent.com/ListianingrumR/digiviz-group/main/storytelling/chart/chart_data/DP_LIVE_19052023190937511.csv')
+            .then(response => response.text())
+            .then(data => {
+                const parsedData = Papa.parse(data, { header: true, dynamicTyping: true }).data;
+
+                // Extract the unique dates from the TIME column
+                const categories = Array.from(new Set(parsedData.map(row => row['TIME'])));  // Replace 'TIME' with your actual column name for time
+
+                // Filter rows by LOCATION, map to the Value, and ensure the data aligns with the categories
+                //AUS
+                const seriesDataAUS = categories.map(time => {
+                    const row = parsedData.find(row => row['LOCATION'] === 'AUS' && row['TIME'] === time);
+                    return row ? parseFloat(row['Value'].toFixed(1)) : null;
+                });
+                //OECD
+                const seriesDataOECD = categories.map(time => {
+                    const row = parsedData.find(row => row['LOCATION'] === 'OECD' && row['TIME'] === time);
+                    return row ? parseFloat(row['Value'].toFixed(1)) : null;
+                });
+
+                //USA
+                const seriesDataUSA = categories.map(time => {
+                    const row = parsedData.find(row => row['LOCATION'] === 'USA' && row['TIME'] === time);
+                    return row ? parseFloat(row['Value'].toFixed(1)) : null;
+                });
+
+                //GBR
+                const seriesDataGBR = categories.map(time => {
+                    const row = parsedData.find(row => row['LOCATION'] === 'GBR' && row['TIME'] === time);
+                    return row ? parseFloat(row['Value'].toFixed(1)) : null;
+                });
+
+                Highcharts.chart('container', {
+                    chart: {
+                        backgroundColor: '#deeaf1'
+                    },
+                    title: {
+                        text: 'Unemployment Rate, Jul 2006 – Jun 2010'
+                    },
+                    xAxis: {
+                        categories: categories,
+                        labels: {
+                            formatter: function () {
+                                return this.value === 48 ? '' : this.value;
+                            }
+                        }
+                    },
+
+                    yAxis: {
+                        title: {
+                            text: 'Unemployment Rate'
+                        },
+                        min: 4,
+                        max: 10,
+                        gridLineColor: '#ffffff',
+                        gridLineWidth: 1
+                    },
+                    tooltip: {
+                        pointFormat: '{series.name}: <b>{point.y:.1f}</b>',
+                    },
+                    plotOptions: {
+                        series: {
+                            marker: {
+                                enabled: true,
+                                radius: 3,
+                                symbol: 'circle'
+                            },
+                            line: {
+                                lineWidth: 3
+                            },
+                            dashstyle: 'shortdot'
+                        }
+
+                    },
+
+
+                    series: [{
+                        name: 'Australia',
+                        color: 'red',
+                        data: seriesDataAUS,
+                        dataLabels: {
+                            enabled: false,
+                            format: '{point.y:.1f}'
+                        }
+                    }, {
+                        name: 'OECD',
+                        color: 'black',
+                        data: seriesDataOECD,
+                        dataLabels: {
+                            enabled: false,
+                            format: '{point.y:.1f}'
+                        }
+                    }, {
+                        name: 'United States',
+                        color: 'purple',
+                        data: seriesDataUSA,
+                        dataLabels: {
+                            enabled: false,
+                            format: '{point.y:.1f}'
+                        }
+                    }, {
+                        name: 'United Kingdom',
+                        color: 'blue',
+                        data: seriesDataGBR,
+                        dataLabels: {
+                            enabled: false,
+                            format: '{point.y:.1f}'
+                        }
+                    }]
+                });
+
+
+            });
+    </script>
+
+</body>
+
+</html>
