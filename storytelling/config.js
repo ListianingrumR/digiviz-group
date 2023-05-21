@@ -83,14 +83,11 @@ let divChapter10 =
   "<p><b>Australia</b></p>" + "<hr>" +
   "<p>The global financial crisis had a profound impact on countries and regions worldwide, including Australia, even though they were geographically distant. In Australia, the crisis led to a significant decline in stock market capitalization, with a loss of over A$771 billion, equivalent to 65% of the country's GDP in 2008. The household sector also experienced a sharp decline in net worth. As approximately 43% of adults in Australia own shares directly or indirectly, the drop in net worth was primarily caused by the decrease in the value of share portfolios due to stock market declines. Even by 2009, the ASX price index remained 30% below its peak in November 2007. The Australian economy has been perceived as having uneven growth, and a \"two-speed\" economy exists, partly due to natural disasters such as the 2010-2011 Queensland floods and the impact of a high Australian dollar.</p>" +
   '<iframe src="chart/share_price.html" width="100%" height="450px" style="border: 0"></iframe>';
-//'<iframe src="https://data.oecd.org/chart/74X3" width="100%" height="645" style="border: 0" mozallowfullscreen="true" webkitallowfullscreen="true" allowfullscreen="true"><a href="https://data.oecd.org/chart/74X3" target="_blank">OECD Chart: Share prices, Total, 2015=100, Monthly, Jun 2006 – Dec 2010</a></iframe>'
 
 // unemployment rate
 let divChapter11 =
   '<p>However, despite these challenges, Australia performed relatively well compared to the United Kingdom and the United States during the crisis. The employment situation in Australia remained favorable, as shown in the graph below. While the average OECD unemployment rate increased from 5.7% to 8.8% during the crisis and then decreased to 8.2% by Q2 2011, Australia\'s unemployment rate increased from 4.2% to a peak of 5.7% during the crisis and then fell to 4.9% by Q2 2011. Australia also had a lower long-term unemployment rate than the OECD average in 2011. This can be attributed to the fact that many employers opted to reduce working hours rather than laying off workers, resulting in an average reduction of around 3.5% in working hours. This approach was similar to that of Germany, where the labor market demonstrated greater resilience compared to other OECD countries.</p>' +
   '<iframe src="chart/unem_many.html" width="100%" height="450px" style="border: 0"></iframe>';
-
-//'<iframe src="https://data.oecd.org/chart/74X2" width="100%" height="645" style="border: 0" mozallowfullscreen="true" webkitallowfullscreen="true" allowfullscreen="true"><a href="https://data.oecd.org/chart/74X2" target="_blank">OECD Chart: Unemployment rate, Total, % of labour force, Monthly, Jul 2006 – Jun 2010</a></iframe>'
 
 // reasons on states
 let divChapter12 =
@@ -101,7 +98,8 @@ let divChapter12 =
   "<p>The Australian government and the Reserve Bank of Australia(RBA) responded swiftly and decisively to the crisis.The RBA implemented significant interest rate cuts, and the government implemented a substantial fiscal stimulus package.These measures helped to stimulate demand in the economy during a time of severe stress. <br> <br>The share price analysis also indicates that Australian share prices continuously outperformed those of over 19 European countries during the market crash and subsequent recovery.</p>" +
   '<h4>3. Strong trade links with China:</h4>' +
   "<p>Australia benefited from its strong trade ties with China, which continued to experience rapid growth during the crisis.Demand from China for Australian commodities, particularly iron ore and coal, remained robust, providing crucial support to the Australian economy.</p >" +
-  '<h4>4. Commodity boom:</h4>' + '<p>Australia\'s economy heavily relies on the mining sector, and the commodity boom that preceded the 2008 crisis helped cushion the Australian economy against the downturn. High commodity prices supported income and employment in the mining sector, which subsequently flowed through to the rest of the economy.<br> <br>At the state level, mining - dominant states such as Western Australia experienced lower personal bankruptcy rates during the 2007 - 2008 financial year.</p>'
+  '<h4>4. Commodity boom:</h4>' + '<p>Australia\'s economy heavily relies on the mining sector, and the commodity boom that preceded the 2008 crisis helped cushion the Australian economy against the downturn. High commodity prices supported income and employment in the mining sector, which subsequently flowed through to the rest of the economy.</p>' +
+  '<h3>Choropleth map</h3>' + '<p> The choropleth map on the left depicts the rate of personal bankruptcy across the various states of Australia for the fiscal year of 2007 - 2008. The map employs a gradient color scheme where darker shades represent higher rates of bankruptcy, thereby indicating a clear spatial pattern of personal financial distress during that period.<br> <br>Interestingly, it\'s evident that states with mining-dominated economies, such as Western Australia, demonstrated lower personal bankruptcy rates during the fiscal year. This could potentially be linked to the financial stability provided by the mining sector, despite the global financial crisis during the same time frame. This view provides an insight into the resilience of these regions during economically challenging times.</p>'
 
 // reasons on cities
 let divChapter13 =
@@ -160,6 +158,16 @@ var config = {
           duration: 300,
         },
         {
+          layer: "major-cities-name",
+          opacity: 0,
+          duration: 300,
+        },
+        {
+          layer: "major-cities-dypf5x",
+          opacity: 0,
+          duration: 300,
+        },
+        {
           layer: "gadm41-aus-1-349tki",
           opacity: 0,
           duration: 300,
@@ -183,6 +191,16 @@ var config = {
         },
         {
           layer: "california",
+          opacity: 0,
+          duration: 300,
+        },
+        {
+          layer: "major-cities-name",
+          opacity: 0,
+          duration: 300,
+        },
+        {
+          layer: "major-cities-dypf5x",
           opacity: 0,
           duration: 300,
         },
@@ -776,6 +794,16 @@ var config = {
           duration: 300,
         },
         {
+          layer: "major-cities-name",
+          opacity: 0,
+          duration: 300,
+        },
+        {
+          layer: "major-cities-dypf5x",
+          opacity: 0,
+          duration: 300,
+        },
+        {
           layer: "gadm41-aus-1-349tki",
           opacity: 1,
           duration: 300,
@@ -794,6 +822,16 @@ var config = {
         },
         {
           layer: "housing-filed08",
+          opacity: 0,
+          duration: 300,
+        },
+        {
+          layer: "major-cities-name",
+          opacity: 0,
+          duration: 300,
+        },
+        {
+          layer: "major-cities-dypf5x",
           opacity: 0,
           duration: 300,
         },
@@ -836,6 +874,16 @@ var config = {
           duration: 300,
         },
         {
+          layer: "major-cities-name",
+          opacity: 0,
+          duration: 300,
+        },
+        {
+          layer: "major-cities-dypf5x",
+          opacity: 0,
+          duration: 300,
+        },
+        {
           layer: "gadm41-aus-1-349tki",
           opacity: 1,
           duration: 300,
@@ -854,6 +902,16 @@ var config = {
         },
         {
           layer: "housing-filed08",
+          opacity: 0,
+          duration: 300,
+        },
+        {
+          layer: "major-cities-name",
+          opacity: 0,
+          duration: 300,
+        },
+        {
+          layer: "major-cities-dypf5x",
           opacity: 0,
           duration: 300,
         },
@@ -875,7 +933,7 @@ var config = {
       hidden: false,
       chapterDiv: divChapter12,
       location: {
-        center: [151.2, -33.85],
+        center: [155.2093, -28.8688],
         zoom: 3.5,
         zoomSmall: 3,
         pitch: 0,
@@ -892,6 +950,16 @@ var config = {
         },
         {
           layer: "housing-filed08",
+          opacity: 0,
+          duration: 300,
+        },
+        {
+          layer: "major-cities-name",
+          opacity: 0,
+          duration: 300,
+        },
+        {
+          layer: "major-cities-dypf5x",
           opacity: 0,
           duration: 300,
         },
@@ -914,6 +982,16 @@ var config = {
         },
         {
           layer: "housing-filed08",
+          opacity: 0,
+          duration: 300,
+        },
+        {
+          layer: "major-cities-name",
+          opacity: 0,
+          duration: 300,
+        },
+        {
+          layer: "major-cities-dypf5x",
           opacity: 0,
           duration: 300,
         },
@@ -935,7 +1013,7 @@ var config = {
       hidden: false,
       chapterDiv: divChapter13,
       location: {
-        center: [155.2093, -33.8688],
+        center: [155.2093, -28.8688],
         zoom: 3.5,
         zoomSmall: 3,
         pitch: 0,
@@ -953,6 +1031,16 @@ var config = {
         {
           layer: "housing-filed08",
           opacity: 0,
+          duration: 300,
+        },
+        {
+          layer: "major-cities-name",
+          opacity: 1,
+          duration: 300,
+        },
+        {
+          layer: "major-cities-dypf5x",
+          opacity: 1,
           duration: 300,
         },
         {
@@ -978,6 +1066,16 @@ var config = {
           duration: 300,
         },
         {
+          layer: "major-cities-name",
+          opacity: 1,
+          duration: 300,
+        },
+        {
+          layer: "major-cities-dypf5x",
+          opacity: 1,
+          duration: 300,
+        },
+        {
           layer: "gadm41-aus-1-349tki",
           opacity: 0,
           duration: 300,
@@ -986,6 +1084,14 @@ var config = {
           layer: "state-bkrp-0708-cr0wbs",
           opacity: 0,
           duration: 300,
+        },
+        {
+          // Callback function to remove popups
+          callback: () => {
+            if (window.cityPopups) {
+              window.cityPopups.forEach(popup => popup.remove());
+            }
+          }
         },
       ],
     },
