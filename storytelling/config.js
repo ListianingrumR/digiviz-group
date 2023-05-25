@@ -68,16 +68,16 @@ let divChapter6 =
 
 let divChapter7 =
   "<p><b>Top 10 States with the highest number of housing foreclosure</b></p>" + "<hr>" +
-  '<iframe title="US Housing Foreclosure 2009" aria-label="Grouped Bars" id="datawrapper-chart-dFsXm" src="https://datawrapper.dwcdn.net/dFsXm/3/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="431" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r=0;r<e.length;r++)if(e[r].contentWindow===a.source){var i=a.data["datawrapper-height"][t]+"px";e[r].style.height=i}}}))}();</script>';
+  '<iframe title="US Housing Foreclosure 2009" aria-label="Grouped Bars" id="datawrapper-chart-dFsXm" src="https://datawrapper.dwcdn.net/dFsXm/3/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="431" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r=0;r<e.length;r++)if(e[r].contentWindow===a.source){var i=a.data["datawrapper-height"][t]+"px";e[r].style.height=i}}}))}();</script>'+
+  "<p>California, more than any other state, was the source of widespread mortgage lending, skyrocketing housing prices, and fraudulent subprime businesses.  Behind that was California's pioneering position in urban, industrial, and fiscal developments in the United States, which fueled the demands and strains on the financial system. (Bardhan and Walker, 2010)</p>";
 
 let divChapter8 =
   "<p><b>The United States situation after the stock market crash</b></p>" + "<hr>" +
   '<iframe src="map/usa.html" width="100%" height="650px" frameBorder="0"></iframe>';
 
 let divChapter9 =
-  "<p><b>California hit hard</b></p>" + "<hr>" +
-  "<p>There were several states that impacted harder than others during this crisis. One of them is California.</p>" +
-  "<p>California, more than any other state, was the source of widespread mortgage lending, skyrocketing housing prices, and fraudulent subprime businesses.  Behind that was California's pioneering position in urban, industrial, and fiscal developments in the United States, which fueled the demands and strains on the financial system. (Bardhan and Walker, 2010)";
+  "<p><b>Michigan was hit hard</b></p>" + "<hr>" +
+  "<p>Amidst the loss of nearly one million automotive industry related jobs, Michigan experienced the highest unemployment rate in the nation during the recession, peaking at 15.3%. This further exacerbated the state's housing crisis and weakened the labor market.</p>";
 //"<p><b>California hit hard</b></p>" + "<hr>" +
 //"<p>Here is the changing of Urbanised Area in Los Angeles, California 10 years after the crisis (2008 vs 2018). We can see there are some of urbanised area that are shrinked in the past decade.</p>" + "</hr>" +
 //'<iframe src="map/urban.html" width="100%" height="650px" frameBorder="0"></iframe>';
@@ -159,7 +159,7 @@ var config = {
           duration: 0,
         },
         {
-          layer: "california",
+          layer: "michigan",
           opacity: 0,
           duration: 0,
         },
@@ -201,7 +201,7 @@ var config = {
           duration: 0,
         },
         {
-          layer: "california",
+          layer: "michigan",
           opacity: 0,
           duration: 0,
         },
@@ -259,7 +259,7 @@ var config = {
           duration: 300,
         },
         {
-          layer: "california",
+          layer: "michigan",
           opacity: 0,
           duration: 300,
         },
@@ -301,7 +301,7 @@ var config = {
           duration: 300,
         },
         {
-          layer: "california",
+          layer: "michigan",
           opacity: 0,
           duration: 300,
         },
@@ -359,7 +359,7 @@ var config = {
           duration: 300,
         },
         {
-          layer: "california",
+          layer: "michigan",
           opacity: 0,
           duration: 300,
         },
@@ -401,7 +401,7 @@ var config = {
           duration: 300,
         },
         {
-          layer: "california",
+          layer: "michigan",
           opacity: 0,
           duration: 300,
         },
@@ -459,7 +459,7 @@ var config = {
           duration: 300,
         },
         {
-          layer: "california",
+          layer: "michigan",
           opacity: 0,
           duration: 300,
         },
@@ -501,7 +501,7 @@ var config = {
           duration: 300,
         },
         {
-          layer: "california",
+          layer: "michigan",
           opacity: 0,
           duration: 300,
         },
@@ -559,7 +559,7 @@ var config = {
           duration: 300,
         },
         {
-          layer: "california",
+          layer: "michigan",
           opacity: 0,
           duration: 300,
         },
@@ -601,7 +601,7 @@ var config = {
           duration: 300,
         },
         {
-          layer: "california",
+          layer: "michigan",
           opacity: 0,
           duration: 300,
         },
@@ -659,7 +659,7 @@ var config = {
           duration: 300,
         },
         {
-          layer: "california",
+          layer: "michigan",
           opacity: 0,
           duration: 300,
         },
@@ -701,7 +701,7 @@ var config = {
           duration: 300,
         },
         {
-          layer: "california",
+          layer: "michigan",
           opacity: 0,
           duration: 300,
         },
@@ -738,8 +738,8 @@ var config = {
       hidden: false,
       chapterDiv: divChapter7,
       location: {
-        center: [260.683594, 39.571822],
-        zoom: 4,
+        center: [240.683594, 39.571822],
+        zoom: 3.7,
         zoomSmall: 2,
         pitch: 0,
         bearing: 0,
@@ -759,7 +759,7 @@ var config = {
           duration: 300,
         },
         {
-          layer: "california",
+          layer: "michigan",
           opacity: 0,
           duration: 300,
         },
@@ -801,7 +801,7 @@ var config = {
           duration: 300,
         },
         {
-          layer: "california",
+          layer: "michigan",
           opacity: 0,
           duration: 300,
         },
@@ -859,7 +859,7 @@ var config = {
           duration: 300,
         },
         {
-          layer: "california",
+          layer: "michigan",
           opacity: 0,
           duration: 300,
         },
@@ -901,7 +901,7 @@ var config = {
           duration: 300,
         },
         {
-          layer: "california",
+          layer: "michigan",
           opacity: 0,
           duration: 300,
         },
@@ -938,8 +938,8 @@ var config = {
       hidden: false,
       chapterDiv: divChapter9,
       location: {
-        center: [-119.42, 36.78],
-        zoom: 5,
+        center: [-80.718559, 41.158401],
+        zoom: 5.5,
         zoomSmall: 2,
         pitch: 50,
         bearing: 30,
@@ -959,7 +959,7 @@ var config = {
           duration: 300,
         },
         {
-          layer: "california",
+          layer: "michigan",
           opacity: 1,
           duration: 300,
         },
@@ -1001,7 +1001,7 @@ var config = {
           duration: 300,
         },
         {
-          layer: "california",
+          layer: "michigan",
           opacity: 0,
           duration: 300,
         },
