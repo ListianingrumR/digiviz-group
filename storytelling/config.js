@@ -66,8 +66,8 @@ let divChapter5 =
 
 let divChapter6 =
   "<p><b>The United States housing crisis led to foreclosure </b></p>" + "<hr>" +
-  "<p>The map shows US number of housing foreclosure filing cases by States in 2009.</p>" +
-  "<p>Legend: </p>";
+  "<p>Housing foreclosures began to rise in the fourth quarter of 2007. This map illustrates the distribution of housing foreclosure numbers by state in the United States in 2008.</p>";
+  //"<p>Legend: </p>";
   
 
 let divChapter7 =
@@ -82,10 +82,10 @@ let divChapter8 =
   "<p><small><i>Click the index to see the choropleth map.</i></small></p>";
 
 let divChapter9 =
-  "<p><b>Michigan was hit hard</b></p>" + "<hr>" +
+  "<p><b>The state that were hit hard</b></p>" + "<hr>" +
   '<iframe title="The rise and fall of unemployment rate in the US by States" aria-label="Interactive line chart" id="datawrapper-chart-nrPyx" src="https://datawrapper.dwcdn.net/nrPyx/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="446" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r=0;r<e.length;r++)if(e[r].contentWindow===a.source){var i=a.data["datawrapper-height"][t]+"px";e[r].style.height=i}}}))}();</script>'+
   "<p><small><i>Hover over the chart to see the unemployment rate in each state.</i></small></p>"+
-  "<p>Amidst the loss of nearly one million automotive industry related jobs, Michigan experienced the highest unemployment rate in the nation during the recession, peaking at 14%. This further exacerbated the state's housing crisis and weakened the labor market.</p>";
+  "<p>Amidst the loss of nearly one million automotive industry related jobs, Michigan experienced the highest unemployment rate in the nation during the recession, peaking at 14%, followed by Nevada and California. This further exacerbated the state's housing crisis and weakened the labor market.</p>";
   //"<p><b>California hit hard</b></p>" + "<hr>" +
 //"<p>Here is the changing of Urbanised Area in Los Angeles, California 10 years after the crisis (2008 vs 2018). We can see there are some of urbanised area that are shrinked in the past decade.</p>" + "</hr>" +
 //'<iframe src="map/urban.html" width="100%" height="650px" frameBorder="0"></iframe>';
