@@ -19,8 +19,9 @@ let descriptionDiv =
 
 // put the footer information here
 let footerDiv =
-  '<p>This base map is based on data by the <a href="https://sipsn.menlhk.go.id/sipsn/">Indonesian Ministry of Environment and Forestry</a> and <a href="https://data.jakarta.go.id">Open Data Jakarta</a>. </br>This project can be found in this <a href="https://github.com/ListianingrumR/digiviz-individual.git">Github repository</a>.</p>' +
-  '<p><a href="https://www.mapbox.com/about/maps/" target="_blank">© Mapbox</a> | <a href="https://www.datawrapper.de" target="_blank">© Datawrapper</a> | <a href="https://www.ucl.ac.uk/bartlett/casa/bartlett-centre-advanced-spatial-analysis">UCL Centre for Advanced Spatial Analysis</a></p>';
+  '<p> </p>';
+//'<p>This base map is based on data by the <a href="https://sipsn.menlhk.go.id/sipsn/">Indonesian Ministry of Environment and Forestry</a> and <a href="https://data.jakarta.go.id">Open Data Jakarta</a>. </br>This project can be found in this <a href="https://github.com/ListianingrumR/digiviz-individual.git">Github repository</a>.</p>' +
+//'<p><a href="https://www.mapbox.com/about/maps/" target="_blank">© Mapbox</a> | <a href="https://www.datawrapper.de" target="_blank">© Datawrapper</a> | <a href="https://www.ucl.ac.uk/bartlett/casa/bartlett-centre-advanced-spatial-analysis">UCL Centre for Advanced Spatial Analysis</a></p>';
 
 // put the 1st box navigation here
 let divChapter1 =
@@ -54,27 +55,32 @@ let divChapter4 =
 let divChapter5 =
   "<p><b>USA Housing bubble</b></p>" + "<hr>" +
   '<iframe src="chart/homevacant.html" width="100%" height="500px" frameBorder="0"></iframe>';
-"<p>Bridging to the USA (housing bubble, subprime mortgage)</p>";
+//"<p>Bridging to the USA (housing bubble, subprime mortgage)</p>";
 // Housing Interactive Map
 //'<div class="chart-container" data-aos="fade-up"></div>' +
 //'<iframe id="housing" src="../housing/housing-foreclosure.html" height="800px" width="100%" frameBorder="0"></iframe>';
 
 let divChapter6 =
-  "<p><b>The United States Housing Foreclosure 2008</b></p>" + "<hr>" +
-  '<iframe title="US Housing Foreclosure 2008" aria-label="Bar Chart" id="datawrapper-chart-dFsXm" src="https://datawrapper.dwcdn.net/dFsXm/2/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="332" data-external="1"></iframe>';
+  "<p><b>The United States housing crisis led to foreclosure </b></p>" + "<hr>" +
+  "<p>The map shows the </p>" +
+  "<p>Legend </p>";
+  
 
 let divChapter7 =
-  "<p><b>The United States Situation after the stock market crash</b></p>" + "<hr>" +
-  '<iframe src="map/usa.html" width="100%" height="650px" frameBorder="0"></iframe>';
+  "<p><b>Top 10 States with the highest number of housing foreclosure</b></p>" + "<hr>" +
+  '<iframe title="US Housing Foreclosure 2009" aria-label="Grouped Bars" id="datawrapper-chart-dFsXm" src="https://datawrapper.dwcdn.net/dFsXm/3/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="431" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r=0;r<e.length;r++)if(e[r].contentWindow===a.source){var i=a.data["datawrapper-height"][t]+"px";e[r].style.height=i}}}))}();</script>';
 
 let divChapter8 =
-  "<p><b>California</b></p>" + "<hr>" +
-  "<p>There are several states that impacted harder than others when this happened. One of them is California.</p>" + "</hr>";
+  "<p><b>The United States situation after the stock market crash</b></p>" + "<hr>" +
+  '<iframe src="map/usa.html" width="100%" height="650px" frameBorder="0"></iframe>';
 
 let divChapter9 =
-  "<p><b>California Urbanised Area</b></p>" + "<hr>" +
-  "<p>Here is the changing of Urbanised Area in Los Angeles, California 10 years after the crisis (2008 vs 2018). We can see there are some of urbanised area that are shrinked in the past decade.</p>" + "</hr>" +
-  '<iframe src="map/urban.html" width="100%" height="650px" frameBorder="0"></iframe>';
+  "<p><b>California hit hard</b></p>" + "<hr>" +
+  "<p>There were several states that impacted harder than others during this crisis. One of them is California.</p>" +
+  "<p>California, more than any other state, was the source of widespread mortgage lending, skyrocketing housing prices, and fraudulent subprime businesses.  Behind that was California's pioneering position in urban, industrial, and fiscal developments in the United States, which fueled the demands and strains on the financial system. (Bardhan and Walker, 2010)";
+//"<p><b>California hit hard</b></p>" + "<hr>" +
+//"<p>Here is the changing of Urbanised Area in Los Angeles, California 10 years after the crisis (2008 vs 2018). We can see there are some of urbanised area that are shrinked in the past decade.</p>" + "</hr>" +
+//'<iframe src="map/urban.html" width="100%" height="650px" frameBorder="0"></iframe>';
 
 // YR codes
 // Impact of the Global Financial Crisis on Australia
@@ -145,74 +151,84 @@ var config = {
         {
           layer: "usa",
           opacity: 0,
-          duration: 300,
+          duration: 0,
         },
         {
           layer: "housing-filed08",
           opacity: 0,
-          duration: 300,
+          duration: 0,
         },
         {
           layer: "california",
           opacity: 0,
-          duration: 300,
+          duration: 0,
+        },
+        {
+          layer: "top10",
+          opacity: 0,
+          duration: 0,
         },
         {
           layer: "major-cities-name",
           opacity: 0,
-          duration: 300,
+          duration: 0,
         },
         {
           layer: "major-cities-dypf5x",
           opacity: 0,
-          duration: 300,
+          duration: 0,
         },
         {
           layer: "gadm41-aus-1-349tki",
           opacity: 0,
-          duration: 300,
+          duration: 0,
         },
         {
           layer: "state-bkrp-0708-cr0wbs",
           opacity: 0,
-          duration: 300,
+          duration: 0,
         },
       ],
       onChapterExit: [
         {
           layer: "usa",
           opacity: 0,
-          duration: 300,
+          duration: 0,
         },
         {
           layer: "housing-filed08",
           opacity: 0,
-          duration: 300,
+          duration: 0,
         },
         {
           layer: "california",
           opacity: 0,
-          duration: 300,
+          duration: 0,
+        },
+        {
+          layer: "top10",
+          opacity: 0,
+          duration: 0,
         },
         {
           layer: "major-cities-name",
           opacity: 0,
-          duration: 300,
+          duration: 0,
         },
         {
           layer: "major-cities-dypf5x",
           opacity: 0,
-          duration: 300,
+          duration: 0,
         },
         {
           layer: "gadm41-aus-1-349tki",
           opacity: 0,
-          duration: 300,
+          duration: 0,
         },
         {
           layer: "state-bkrp-0708-cr0wbs",
           opacity: 0,
-          duration: 300,
+          duration: 0,
         },
       ],
     },
@@ -248,6 +264,21 @@ var config = {
           duration: 300,
         },
         {
+          layer: "top10",
+          opacity: 0,
+          duration: 300,
+        },
+        {
+          layer: "major-cities-name",
+          opacity: 0,
+          duration: 300,
+        },
+        {
+          layer: "major-cities-dypf5x",
+          opacity: 0,
+          duration: 300,
+        },
+        {
           layer: "gadm41-aus-1-349tki",
           opacity: 0,
           duration: 300,
@@ -271,6 +302,21 @@ var config = {
         },
         {
           layer: "california",
+          opacity: 0,
+          duration: 300,
+        },
+        {
+          layer: "top10",
+          opacity: 0,
+          duration: 300,
+        },
+        {
+          layer: "major-cities-name",
+          opacity: 0,
+          duration: 300,
+        },
+        {
+          layer: "major-cities-dypf5x",
           opacity: 0,
           duration: 300,
         },
@@ -318,6 +364,21 @@ var config = {
           duration: 300,
         },
         {
+          layer: "top10",
+          opacity: 0,
+          duration: 300,
+        },
+        {
+          layer: "major-cities-name",
+          opacity: 0,
+          duration: 300,
+        },
+        {
+          layer: "major-cities-dypf5x",
+          opacity: 0,
+          duration: 300,
+        },
+        {
           layer: "gadm41-aus-1-349tki",
           opacity: 0,
           duration: 300,
@@ -341,6 +402,21 @@ var config = {
         },
         {
           layer: "california",
+          opacity: 0,
+          duration: 300,
+        },
+        {
+          layer: "top10",
+          opacity: 0,
+          duration: 300,
+        },
+        {
+          layer: "major-cities-name",
+          opacity: 0,
+          duration: 300,
+        },
+        {
+          layer: "major-cities-dypf5x",
           opacity: 0,
           duration: 300,
         },
@@ -388,6 +464,21 @@ var config = {
           duration: 300,
         },
         {
+          layer: "top10",
+          opacity: 0,
+          duration: 300,
+        },
+        {
+          layer: "major-cities-name",
+          opacity: 0,
+          duration: 300,
+        },
+        {
+          layer: "major-cities-dypf5x",
+          opacity: 0,
+          duration: 300,
+        },
+        {
           layer: "gadm41-aus-1-349tki",
           opacity: 0,
           duration: 300,
@@ -411,6 +502,21 @@ var config = {
         },
         {
           layer: "california",
+          opacity: 0,
+          duration: 300,
+        },
+        {
+          layer: "top10",
+          opacity: 0,
+          duration: 300,
+        },
+        {
+          layer: "major-cities-name",
+          opacity: 0,
+          duration: 300,
+        },
+        {
+          layer: "major-cities-dypf5x",
           opacity: 0,
           duration: 300,
         },
@@ -458,6 +564,21 @@ var config = {
           duration: 300,
         },
         {
+          layer: "top10",
+          opacity: 0,
+          duration: 300,
+        },
+        {
+          layer: "major-cities-name",
+          opacity: 0,
+          duration: 300,
+        },
+        {
+          layer: "major-cities-dypf5x",
+          opacity: 0,
+          duration: 300,
+        },
+        {
           layer: "gadm41-aus-1-349tki",
           opacity: 0,
           duration: 300,
@@ -481,6 +602,21 @@ var config = {
         },
         {
           layer: "california",
+          opacity: 0,
+          duration: 300,
+        },
+        {
+          layer: "top10",
+          opacity: 0,
+          duration: 300,
+        },
+        {
+          layer: "major-cities-name",
+          opacity: 0,
+          duration: 300,
+        },
+        {
+          layer: "major-cities-dypf5x",
           opacity: 0,
           duration: 300,
         },
@@ -528,6 +664,21 @@ var config = {
           duration: 300,
         },
         {
+          layer: "top10",
+          opacity: 0,
+          duration: 300,
+        },
+        {
+          layer: "major-cities-name",
+          opacity: 0,
+          duration: 300,
+        },
+        {
+          layer: "major-cities-dypf5x",
+          opacity: 0,
+          duration: 300,
+        },
+        {
           layer: "gadm41-aus-1-349tki",
           opacity: 0,
           duration: 300,
@@ -555,6 +706,21 @@ var config = {
           duration: 300,
         },
         {
+          layer: "top10",
+          opacity: 0,
+          duration: 300,
+        },
+        {
+          layer: "major-cities-name",
+          opacity: 0,
+          duration: 300,
+        },
+        {
+          layer: "major-cities-dypf5x",
+          opacity: 0,
+          duration: 300,
+        },
+        {
           layer: "gadm41-aus-1-349tki",
           opacity: 0,
           duration: 300,
@@ -568,7 +734,7 @@ var config = {
     },
     {
       id: "usa4",
-      alignment: "center2",
+      alignment: "left",
       hidden: false,
       chapterDiv: divChapter7,
       location: {
@@ -598,6 +764,21 @@ var config = {
           duration: 300,
         },
         {
+          layer: "top10",
+          opacity: 1,
+          duration: 300,
+        },
+        {
+          layer: "major-cities-name",
+          opacity: 0,
+          duration: 300,
+        },
+        {
+          layer: "major-cities-dypf5x",
+          opacity: 0,
+          duration: 300,
+        },
+        {
           layer: "gadm41-aus-1-349tki",
           opacity: 0,
           duration: 300,
@@ -625,6 +806,21 @@ var config = {
           duration: 300,
         },
         {
+          layer: "top10",
+          opacity: 0,
+          duration: 300,
+        },
+        {
+          layer: "major-cities-name",
+          opacity: 0,
+          duration: 300,
+        },
+        {
+          layer: "major-cities-dypf5x",
+          opacity: 0,
+          duration: 300,
+        },
+        {
           layer: "gadm41-aus-1-349tki",
           opacity: 0,
           duration: 300,
@@ -638,9 +834,109 @@ var config = {
     },
     {
       id: "california",
-      alignment: "right",
+      alignment: "center2",
       hidden: false,
       chapterDiv: divChapter8,
+      location: {
+        center: [260.683594, 39.571822],
+        zoom: 4,
+        zoomSmall: 2,
+        pitch: 0,
+        bearing: 0,
+      },
+      mapAnimation: "flyTo",
+      rotateAnimation: false,
+      callback: "",
+      onChapterEnter: [
+        {
+          layer: "usa",
+          opacity: 0,
+          duration: 300,
+        },
+        {
+          layer: "housing-filed08",
+          opacity: 0,
+          duration: 300,
+        },
+        {
+          layer: "california",
+          opacity: 0,
+          duration: 300,
+        },
+        {
+          layer: "top10",
+          opacity: 0,
+          duration: 300,
+        },
+        {
+          layer: "major-cities-name",
+          opacity: 0,
+          duration: 300,
+        },
+        {
+          layer: "major-cities-dypf5x",
+          opacity: 0,
+          duration: 300,
+        },
+        {
+          layer: "gadm41-aus-1-349tki",
+          opacity: 0,
+          duration: 300,
+        },
+        {
+          layer: "state-bkrp-0708-cr0wbs",
+          opacity: 0,
+          duration: 300,
+        },
+      ],
+      onChapterExit: [
+        {
+          layer: "usa",
+          opacity: 0,
+          duration: 300,
+        },
+        {
+          layer: "housing-filed08",
+          opacity: 0,
+          duration: 300,
+        },
+        {
+          layer: "california",
+          opacity: 0,
+          duration: 300,
+        },
+        {
+          layer: "top10",
+          opacity: 0,
+          duration: 300,
+        },
+        {
+          layer: "major-cities-name",
+          opacity: 0,
+          duration: 300,
+        },
+        {
+          layer: "major-cities-dypf5x",
+          opacity: 0,
+          duration: 300,
+        },
+        {
+          layer: "gadm41-aus-1-349tki",
+          opacity: 0,
+          duration: 300,
+        },
+        {
+          layer: "state-bkrp-0708-cr0wbs",
+          opacity: 0,
+          duration: 300,
+        },
+      ],
+    },
+    {
+      id: "california2",
+      alignment: "right",
+      hidden: false,
+      chapterDiv: divChapter9,
       location: {
         center: [-119.42, 36.78],
         zoom: 5,
@@ -668,6 +964,21 @@ var config = {
           duration: 300,
         },
         {
+          layer: "top10",
+          opacity: 0,
+          duration: 300,
+        },
+        {
+          layer: "major-cities-name",
+          opacity: 0,
+          duration: 300,
+        },
+        {
+          layer: "major-cities-dypf5x",
+          opacity: 0,
+          duration: 300,
+        },
+        {
           layer: "gadm41-aus-1-349tki",
           opacity: 0,
           duration: 300,
@@ -695,62 +1006,17 @@ var config = {
           duration: 300,
         },
         {
-          layer: "gadm41-aus-1-349tki",
+          layer: "top10",
           opacity: 0,
           duration: 300,
         },
         {
-          layer: "state-bkrp-0708-cr0wbs",
-          opacity: 0,
-          duration: 300,
-        },
-      ],
-    },
-    {
-      id: "california2",
-      alignment: "center2",
-      hidden: false,
-      chapterDiv: divChapter9,
-      location: {
-        center: [-119.42, 36.78],
-        zoom: 4,
-        zoomSmall: 2,
-        pitch: 0,
-        bearing: 0,
-      },
-      mapAnimation: "flyTo",
-      rotateAnimation: false,
-      callback: "",
-      onChapterEnter: [
-        {
-          layer: "usa",
+          layer: "major-cities-name",
           opacity: 0,
           duration: 300,
         },
         {
-          layer: "housing-filed08",
-          opacity: 0,
-          duration: 300,
-        },
-        {
-          layer: "gadm41-aus-1-349tki",
-          opacity: 0,
-          duration: 300,
-        },
-        {
-          layer: "state-bkrp-0708-cr0wbs",
-          opacity: 0,
-          duration: 300,
-        },
-      ],
-      onChapterExit: [
-        {
-          layer: "usa",
-          opacity: 0,
-          duration: 300,
-        },
-        {
-          layer: "housing-filed08",
+          layer: "major-cities-dypf5x",
           opacity: 0,
           duration: 300,
         },
