@@ -33,18 +33,21 @@ let divChapter1 =
 
 let divChapter2 =
   "<p style=margin-top:50px><b>World GDP Growth(%) from 2006-2016</b></p>" +
+  "<p><small><i>Click the play button to see the change of GDP growth overtime and hover over the map to see the GDP growth by country.</i></small></p>"+
   '<iframe width="100%" height="650px" src= "map/world_gdp_2.html" frameBorder="0"</iframe>';
 
 // continue to next box/chapter
 let divChapter3 =
   "<p><b>Global Unemployment Rate(%) from 2006-2016</b></p>" + "<hr>" +
-  '<iframe width="100%" height="650px" src= "map/world_unemployment_rate.html" frameBorder="0"</iframe>' + "<hr>";
+  "<p><small><i>Click the play button to see the change of unemployment rate overtime and hover over the map to see the unemplpoyment rate by country.</i></small></p>"+
+  '<iframe width="100%" height="650px" src= "map/world_unemployment_rate.html" frameBorder="0"</iframe>';
 // https://www.thebalancemoney.com/lehman-brothers-collapse-causes-impact-4842338
 
 
 let divChapter4 =
   '<div id="chart-container"></div>' +
-  '<iframe src="chart/timeline.html" width="100%" height="500px" frameBorder="0"></iframe>';
+  '<iframe src="chart/timeline.html" width="100%" height="500px" frameBorder="0"></iframe>'+
+  "<p><small><i>Hover over the chart to see the detail description.</i></small></p>";
 //"<p><img src='images/jakarta-waste-volume-per-day-by-type-ton.png'></p>"+
 //"<p class='data-source'>Data source: <a href='https://datawrapper.dwcdn.net/m2o0s/3/'>Environment Office DKI Jakarta</a></p>"+
 //"<p>Jakarta is divided into 6 districts, which are Thousand Islands, Central Jakarta, North Jakarta, West Jakarta, East Jakarta and South Jakarta.</p>"+
@@ -54,31 +57,36 @@ let divChapter4 =
 
 let divChapter5 =
   "<p><b>USA Housing bubble</b></p>" + "<hr>" +
-  '<iframe src="chart/homevacant.html" width="100%" height="500px" frameBorder="0"></iframe>';
-//"<p>Bridging to the USA (housing bubble, subprime mortgage)</p>";
+  '<iframe src="chart/homevacant.html" width="100%" height="500px" frameBorder="0"></iframe>'+
+  "<p><small><i>Hover over the chart to see homeownership rate each year.</i></small></p>";
+  //"<p>Bridging to the USA (housing bubble, subprime mortgage)</p>";
 // Housing Interactive Map
 //'<div class="chart-container" data-aos="fade-up"></div>' +
 //'<iframe id="housing" src="../housing/housing-foreclosure.html" height="800px" width="100%" frameBorder="0"></iframe>';
 
 let divChapter6 =
   "<p><b>The United States housing crisis led to foreclosure </b></p>" + "<hr>" +
-  "<p>The map shows the </p>" +
-  "<p>Legend </p>";
+  "<p>The map shows US number of housing foreclosure filing cases by States in 2009.</p>" +
+  "<p>Legend: </p>";
   
 
 let divChapter7 =
   "<p><b>Top 10 States with the highest number of housing foreclosure</b></p>" + "<hr>" +
   '<iframe title="US Housing Foreclosure 2009" aria-label="Grouped Bars" id="datawrapper-chart-dFsXm" src="https://datawrapper.dwcdn.net/dFsXm/3/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="431" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r=0;r<e.length;r++)if(e[r].contentWindow===a.source){var i=a.data["datawrapper-height"][t]+"px";e[r].style.height=i}}}))}();</script>'+
+  "<p><small><i>Hover over the chart to see number of housing foreclosure in each state.</i></small></p>"+
   "<p>California, more than any other state, was the source of widespread mortgage lending, skyrocketing housing prices, and fraudulent subprime businesses.  Behind that was California's pioneering position in urban, industrial, and fiscal developments in the United States, which fueled the demands and strains on the financial system. (Bardhan and Walker, 2010)</p>";
 
 let divChapter8 =
   "<p><b>The United States situation after the stock market crash</b></p>" + "<hr>" +
-  '<iframe src="map/usa.html" width="100%" height="650px" frameBorder="0"></iframe>';
+  '<iframe src="map/usa.html" width="100%" height="650px" frameBorder="0"></iframe>'+
+  "<p><small><i>Click the index to see the choropleth map.</i></small></p>";
 
 let divChapter9 =
   "<p><b>Michigan was hit hard</b></p>" + "<hr>" +
-  "<p>Amidst the loss of nearly one million automotive industry related jobs, Michigan experienced the highest unemployment rate in the nation during the recession, peaking at 15.3%. This further exacerbated the state's housing crisis and weakened the labor market.</p>";
-//"<p><b>California hit hard</b></p>" + "<hr>" +
+  '<iframe title="The rise and fall of unemployment rate in the US by States" aria-label="Interactive line chart" id="datawrapper-chart-nrPyx" src="https://datawrapper.dwcdn.net/nrPyx/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="446" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r=0;r<e.length;r++)if(e[r].contentWindow===a.source){var i=a.data["datawrapper-height"][t]+"px";e[r].style.height=i}}}))}();</script>'+
+  "<p><small><i>Hover over the chart to see the unemployment rate in each state.</i></small></p>"+
+  "<p>Amidst the loss of nearly one million automotive industry related jobs, Michigan experienced the highest unemployment rate in the nation during the recession, peaking at 14%. This further exacerbated the state's housing crisis and weakened the labor market.</p>";
+  //"<p><b>California hit hard</b></p>" + "<hr>" +
 //"<p>Here is the changing of Urbanised Area in Los Angeles, California 10 years after the crisis (2008 vs 2018). We can see there are some of urbanised area that are shrinked in the past decade.</p>" + "</hr>" +
 //'<iframe src="map/urban.html" width="100%" height="650px" frameBorder="0"></iframe>';
 
