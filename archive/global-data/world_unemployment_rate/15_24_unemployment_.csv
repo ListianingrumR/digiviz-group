@@ -1,4 +1,4 @@
-﻿coutry_name,code,indicator.label,source.label,classif1.label,Year,obs_value,obs_status.label
+﻿coutry_name,code,indicator.label,source.label,classif1.label,Year,Unemployment_rate,obs_status.label
 Afghanistan,AFG,"Unemployment rate by sex and age -- ILO modelled estimates, Nov. 2022 (%)",ILO - Modelled Estimates,"Age (Youth, adults): 15-24",2016,14.902,
 Afghanistan,AFG,"Unemployment rate by sex and age -- ILO modelled estimates, Nov. 2022 (%)",ILO - Modelled Estimates,"Age (Youth, adults): 15-24",2015,12.495,
 Afghanistan,AFG,"Unemployment rate by sex and age -- ILO modelled estimates, Nov. 2022 (%)",ILO - Modelled Estimates,"Age (Youth, adults): 15-24",2014,10.086,Real value
